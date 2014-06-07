@@ -1,0 +1,966 @@
+$image_width: 329 //+ 3
+$image_height: 425 //+ 5
+
+$slices_count: 7
+
+//multi-flip animations
+$slices_width: $image_width / $slices_count
+$slices_middle: ($slices_count+1) / 2
+
+.rs-transition, .rs-cover.rs-hide, .rs-images
+  display: none
+
+.rs-transition, .rs-cover
+  position: absolute
+  width: #{$image_width}px
+  height: #{$image_height}px
+  top: 0px
+  left: 0px
+
+.rs-transition.rs-show
+  display: block
+
+.rs-card, .rs-back, .rs-front
+  width: 100%
+  height: 100%
+  position: absolute
+
+.rs-card, .rs-cover, .rs-transition
+  -webkit-transform-style: preserve-3d
+
+/* ********************** ********************** ************ ********************** ********************** */
+/* ********************** ********************** Flip Effects ********************** ********************** */
+/* ********************** ********************** ************ ********************** ********************** */
+
+.rs-flip01, .rs-flip02, .rs-flip03, .rs-flip04
+  .rs-multi-flip, .rs-cube, .rs-unfold
+    display: none
+
+/* ********************** Flip 01 ********************** */
+
+.rs-flip01
+  .rs-front, .rs-back
+    -webkit-backface-visibility: hidden
+  .rs-back
+    -webkit-transform: rotate3d(1, 0, 0, -180deg)
+  &.rs-show .rs-card
+    -webkit-animation: rs-flip01 1s ease-in-out forwards
+
+@-webkit-keyframes rs-flip01
+  0%
+    -webkit-transform: rotate3d(1, 0, 0, 0deg)
+  100%
+    -webkit-transform: rotate3d(1, 0, 0, -180deg)
+
+/* ********************** Flip 02 ********************** */
+
+.rs-flip02
+  .rs-front, .rs-back
+    -webkit-backface-visibility: hidden
+  .rs-back
+    -webkit-transform: rotate3d(1, 0, 0, -180deg)
+  &.rs-show .rs-card
+    -webkit-animation: flip02 1s ease-in-out forwards
+    -webkit-transform-origin: 50% 0%
+
+@-webkit-keyframes flip02
+  0%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  100%
+    -webkit-transform: rotate3d(1, 0, 0, -180deg) translate3d(0, -#{$image_height}px, 0)
+
+/* ********************** Flip 03 ********************** */
+
+.rs-flip03
+  .rs-front, .rs-back
+    -webkit-backface-visibility: hidden
+  .rs-back
+    -webkit-transform: rotate3d(0, 1, 0, -180deg)
+  &.rs-show .rs-card
+    -webkit-animation: flip03 1s ease-in-out forwards
+
+@-webkit-keyframes flip03
+  0%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  50%
+    -webkit-transform: rotate3d(0, 1, 0, -190deg)
+  70%
+    -webkit-transform: rotate3d(0, 1, 0, -172deg)
+  80%
+    -webkit-transform: rotate3d(0, 1, 0, -180deg)
+  95%
+    -webkit-transform: rotate3d(0, 1, 0, -178deg)
+  100%
+    -webkit-transform: rotate3d(0, 1, 0, -180deg)
+
+/* ********************** Flip 04 ********************** */
+
+.rs-flip04
+  .rs-front, .rs-back
+    -webkit-backface-visibility: hidden
+  .rs-back
+    -webkit-transform: rotate3d(0, 1, 0, -180deg)
+  &.rs-show .rs-card
+    -webkit-animation: flip04 1s ease-in-out forwards
+    -webkit-transform-origin: 100% 50%
+
+@-webkit-keyframes flip04
+  0%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  100%
+    -webkit-transform: rotate3d(0, 1, 0, -180deg) translate3d(#{$image_width}px, 0, 0)
+
+/* ********************** ********************** **************** ********************** ********************** */
+/* ********************** ********************** Rotation Effects ********************** ********************** */
+/* ********************** ********************** **************** ********************** ********************** */
+
+.rs-rotation01, .rs-rotation02, .rs-rotation03, .rs-rotation04, .rs-rotation05, .rs-rotation06
+  .rs-multi-flip, .rs-cube, .rs-unfold
+    display: none
+
+/* ********************** Rotation 01 ********************** */
+
+.rs-rotation01
+  .rs-front
+    z-index: 2
+  .rs-back
+    z-index: 1
+    -webkit-backface-visibility: hidden
+  &.rs-show
+    .rs-front, .rs-back
+      -webkit-transform-origin: 50% 100%
+    .rs-front
+      -webkit-animation: rotation01Front 0.8s linear
+    .rs-back
+      -webkit-animation: rotation01Back 0.8s linear
+
+@-webkit-keyframes rotation01Front
+  0%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+    opacity: 1
+  50%
+    -webkit-transform: rotate3d(1, 0, 0, -90deg)
+    opacity: 0.5
+  100%
+    -webkit-transform: rotate3d(1, 0, 0, -180deg)
+    opacity: 0
+
+@-webkit-keyframes rotation01Back
+  0%
+    -webkit-transform: rotate3d(1, 0, 0, 90deg)
+    opacity: 0
+  30%
+    -webkit-transform: rotate3d(1, 0, 0, 90deg)
+    opacity: 0
+  100%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+    opacity: 1
+
+/* ********************** Rotation 02 ********************** */
+
+.rs-rotation02
+  .rs-front
+    z-index: 2
+  .rs-back
+    z-index: 1
+    -webkit-backface-visibility: hidden
+  &.rs-show .rs-front
+    -webkit-animation: rotation02Front 0.8s linear
+    -webkit-transform-origin: 50% 100%
+
+@-webkit-keyframes rotation02Front
+  0%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+    opacity: 1
+  50%
+    -webkit-transform: rotate3d(1, 0, 0, -90deg)
+    opacity: 1
+  90%
+    -webkit-transform: rotate3d(1, 0, 0, -260deg)
+    opacity: 0
+  100%
+    -webkit-transform: rotate3d(1, 0, 0, -270deg)
+    opacity: 0
+
+/* ********************** Rotation 03 ********************** */
+
+.rs-rotation03
+  .rs-front
+    z-index: 2
+  .rs-back
+    z-index: 1
+    -webkit-backface-visibility: hidden
+  &.rs-show .rs-front
+    -webkit-animation: rotation03Front 0.8s linear
+    -webkit-transform-origin: 100% 50%
+
+@-webkit-keyframes rotation03Front
+  0%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+    opacity: 1
+  50%
+    -webkit-transform: rotate3d(0, 1, 0, 90deg)
+    opacity: 1
+  100%
+    -webkit-transform: rotate3d(0, 1, 0, 180deg)
+    opacity: 0
+
+/* ********************** Rotation 04 ********************** */
+
+.rs-rotation04
+  .rs-front
+    z-index: 2
+  .rs-back
+    z-index: 1
+    -webkit-backface-visibility: hidden
+  &.rs-show
+    .rs-front, .rs-back
+      -webkit-transform-origin: 0% 50%
+    .rs-front
+      -webkit-animation: rotation04Front 0.8s linear
+    .rs-back
+      -webkit-animation: rotation04Back 0.8s ease-in-out
+
+@-webkit-keyframes rotation04Front
+  0%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+    opacity: 1
+    -webkit-animation-timing-function: ease-in
+  30%
+    -webkit-transform: rotate3d(0, 1, 0, -90deg)
+    opacity: 0.5
+    -webkit-animation-timing-function: ease-out
+  100%
+    -webkit-transform: rotate3d(0, 1, 0, -180deg)
+    opacity: 0
+
+@-webkit-keyframes rotation04Back
+  0%
+    opacity: 0
+    -webkit-transform: rotate3d(0, 1, 0, 90deg)
+  30%
+    -webkit-transform: rotate3d(0, 1, 0, 90deg)
+    opacity: 0
+  60%
+    -webkit-transform: rotate3d(0, 1, 0, -13deg)
+    opacity: 1
+  70%
+    -webkit-transform: rotate3d(0, 1, 0, 8deg)
+    opacity: 1
+  80%
+    -webkit-transform: rotate3d(0, 1, 0, 0deg)
+    opacity: 1
+  95%
+    -webkit-transform: rotate3d(0, 1, 0, 3deg)
+    opacity: 1
+  100%
+    -webkit-transform: rotate3d(0, 1, 0, 0deg)
+    opacity: 1
+
+/* ********************** Rotation 05 ********************** */
+
+.rs-rotation05
+  .rs-front
+    z-index: 2
+  .rs-back
+    z-index: 1
+    -webkit-backface-visibility: hidden
+  &.rs-show .rs-front
+    -webkit-transform-origin: 0% 50%
+    -webkit-animation: rotation05Front 0.8s linear
+
+@-webkit-keyframes rotation05Front
+  0%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+    opacity: 1
+  50%
+    -webkit-transform: translateX(-200px) translateZ(100px) rotate3d(0, 1, 0, -120deg)
+    opacity: 0.5
+  100%
+    -webkit-transform: translateX(-400px) translateZ(200px) rotate3d(0, 1, 0, -240deg)
+    opacity: 0
+
+/* ********************** ********************** ****************** ********************** ********************** */
+/* ********************** ********************** Multi-flip Effects ********************** ********************** */
+/* ********************** ********************** ****************** ********************** ********************** */
+
+.rs-multi-flip01, .rs-multi-flip02, .rs-multi-flip03
+
+  .rs-flip, .rs-cube, .rs-unfold
+    display: none
+  .rs-back, .rs-front
+    width: #{$slices_width}px
+    height: 100%
+    overflow: hidden
+    position: absolute
+    -webkit-backface-visibility: hidden
+  .rs-front
+    z-index: 2
+  .rs-back
+    z-index: 1
+  &.rs-transition
+
+    img
+      position: absolute
+    @for $i from 1 through $slices_count
+      .rs-flip#{$i} img
+        left: -#{($i - 1) * $slices_width}px
+
+  @for $i from 1 through $slices_count
+    .rs-flip#{$i}
+      left: #{($i - 1) * $slices_width}px
+
+/* ********************** Multi-flip 01 ********************** */
+
+$slices_animation_first_step: 60
+$slices_animation_step_value: (100-$slices_animation_first_step) / $slices_count
+
+.rs-multi-flip01
+  .rs-back
+    -webkit-transform: rotate3d(1, 0, 0, -180deg)
+  &.rs-show .rs-card
+    -webkit-animation-duration: 1.5s
+    -webkit-animation-timing-function: ease-in-out
+    -webkit-animation-fill-mode: forwards
+
+  @for $i from 1 through $slices_count
+    @if $i <= $slices_middle
+      .rs-flip#{$i}
+        z-index: #{$i}
+        -webkit-animation-name: multiflip1_#{$slices_middle - $i + 1}
+    @else
+      .rs-flip#{$i}
+        z-index: #{$slices_count - $i + 1}
+        -webkit-animation-name: multiflip1_#{$slices_middle - $slices_count + $i}
+
+@-webkit-keyframes multiflip1_1
+  0%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+#{$slices_animation_first_step}%
+  -webkit-transform: rotate3d(1, 0, 0, -180deg)
+100%
+  -webkit-transform: rotate3d(1, 0, 0, -180deg)
+
+@for $i from 2 through $slices_middle
+  @-webkit-keyframes multiflip1_#{$i}
+    0%
+      -webkit-transform: rotate3d(1, 0, 0, 0)
+  #{($i - 1) * $slices_animation_step_value}%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  #{$slices_animation_first_step + ($i - 1) * $slices_animation_step_value}%
+    -webkit-transform: rotate3d(1, 0, 0, -180deg)
+  100%
+    -webkit-transform: rotate3d(1, 0, 0, -180deg)
+
+/* ********************** Multi-flip 02 ********************** */
+
+$slices_animation_first_step:  33
+$slices_animation_step_value: $slices_animation_first_step / $slices_count
+
+.rs-multi-flip02
+  .rs-back
+    -webkit-transform: rotate3d(1, 0, 0, -180deg)
+  &.rs-show .rs-card
+    -webkit-animation-duration: 1.5s
+    -webkit-animation-timing-function: ease-in-out
+    -webkit-animation-fill-mode: forwards
+
+  @for $i from 1 through $slices_count
+    @if $i <= $slices_middle
+      .rs-flip#{$i}
+        z-index: #{$i}
+        -webkit-animation-name: multiflip2_#{$i}
+    @else
+      .rs-flip#{$i}
+        z-index: #{$slices_count - $i + 1}
+        -webkit-animation-name: multiflip2_#{$i}
+
+@-webkit-keyframes multiflip2_1
+  0%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+#{$slices_animation_first_step}%
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translate3d(0, -200px, 0)
+#{$slices_animation_first_step * 2}%
+  -webkit-transform: rotate3d(1, 0, 0, 180deg)
+100%
+  -webkit-transform: rotate3d(1, 0, 0, 180deg) translate3d(0, 0, 0)
+
+@for $i from 2 through $slices_count
+  @-webkit-keyframes multiflip2_#{$i}
+    0%
+      -webkit-transform: rotate3d(1, 0, 0, 0)
+  #{$slices_animation_step_value * ($i - 1)}%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  #{$slices_animation_first_step + $slices_animation_step_value * ($i - 1)}%
+    -webkit-transform: rotate3d(1, 0, 0, 90deg) translate3d(0, -200px, 0)
+  #{$slices_animation_first_step * 2 + $slices_animation_step_value * ($i - 1)}%
+    -webkit-transform: rotate3d(1, 0, 0, 180deg)
+  100%
+    -webkit-transform: rotate3d(1, 0, 0, 180deg) translate3d(0, 0, 0)
+
+/* ********************** Multi-flip 03 ********************** */
+
+$slices_animation_first_step:  33
+$slices_animation_step_value: $slices_animation_first_step / $slices_count
+
+.rs-multi-flip03
+  .rs-back
+    -webkit-transform: rotate3d(0, 1, 0, -180deg)
+  &.rs-show .rs-card
+    -webkit-animation-duration: 1.5s
+    -webkit-animation-timing-function: ease-in-out
+    -webkit-animation-fill-mode: forwards
+    -webkit-transform-origin: 0% 50%
+  @for $i from 1 through $slices_count
+    @if $i <= $slices_middle
+      .rs-flip#{$i}
+        z-index: #{$i}
+        -webkit-animation-name: multiflip3_#{$i}
+    @else
+      .rs-flip#{$i}
+        z-index: #{$slices_count - $i + 1}
+        -webkit-animation-name: multiflip3_#{$i}
+
+@-webkit-keyframes multiflip3_1
+  0%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  #{$slices_animation_first_step * 2}%
+    -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(-#{$slices_width}px, 0, 0)
+  100%
+    -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(-#{$slices_width}px, 0, 0)
+
+@for $i from 2 through $slices_count
+  @-webkit-keyframes multiflip3_#{$i}
+    0%
+      -webkit-transform: rotate3d(0, 1, 0, 0)
+  #{$slices_animation_step_value * ($i - 1)}%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  #{$slices_animation_first_step * 2 + $slices_animation_step_value * ($i - 1)}%
+    -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(-#{$slices_width}px, 0, 0)
+  100%
+    -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(-#{$slices_width}px, 0, 0)
+
+/* ********************** ********************** ************ ********************** ********************** */
+/* ********************** ********************** Cube Effects ********************** ********************** */
+/* ********************** ********************** ************ ********************** ********************** */
+
+.rs-cube01, .rs-cube02, .rs-cube03, .rs-cube04
+  .rs-flip, .rs-multi-flip, .rs-unfold
+    display: none
+  .rs-card
+    display: none
+  .rs-back
+    -webkit-backface-visibility: hidden
+    z-index: 1
+  .rs-front
+    -webkit-backface-visibility: hidden
+    z-index: 2
+  .rs-cube-face
+    position: absolute
+    width: 329px
+    height: 425px
+    display: block
+    overflow: hidden
+
+/* ********************** Cube 01 ********************** */
+
+.rs-cube01
+  .rs-cube-front
+    -webkit-transform: scale3d(0.825, 0.825, 0.825) translate3d(0, 0, 212px)
+  .rs-cube-top
+    -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(1, 0, 0, 90deg) translate3d(0, 0, 212px)
+  .rs-cube-bottom
+    -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(1, 0, 0, -90deg) translate3d(0, 0, 212px)
+  .rs-cube-right
+    -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 212px)
+  .rs-cube-left
+    -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 212px)
+  &.rs-show
+    -webkit-animation: cube1 0.5s ease-in-out
+
+@-webkit-keyframes cube1
+  0%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  100%
+    -webkit-transform: rotate3d(1, 0, 0, -90deg)
+
+/* ********************** Cube 02 ********************** */
+
+.rs-cube02
+  .rs-cube-front
+    -webkit-transform: scale3d(0.825, 0.825, 0.825) translate3d(0, 0, 212px)
+  .rs-cube-bottom
+    -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(1, 0, 0, -90deg) translate3d(0, 0, 212px)
+  .rs-cube-top
+    -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(1, 0, 0, 90deg) translate3d(0, 0, 212px)
+  .rs-cube-right
+    -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 212px)
+  .rs-cube-left
+    -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 212px)
+  &.rs-show
+    -webkit-animation: cube2 0.5s ease-in-out
+
+@-webkit-keyframes cube2
+  0%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  100%
+    -webkit-transform: rotate3d(1, 0, 0, 90deg)
+
+/* ********************** Cube 03 ********************** */
+
+.rs-cube03
+  .rs-cube-front
+    -webkit-transform: scale3d(0.858, 0.858, 0.858) translate3d(0, 0, 164px)
+  .rs-cube-right
+    -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 164px)
+  .rs-cube-left
+    -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
+  .rs-cube-top
+    -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(1, 0, 0, 90deg) translate3d(0, 0, 164px)
+  .rs-cube-bottom
+    -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
+  &.rs-show
+    -webkit-animation: cube3 1s ease-in-out
+
+@-webkit-keyframes cube3
+  0%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  40%
+    -webkit-transform: rotate3d(0, 1, 0, -100deg)
+  60%
+    -webkit-transform: rotate3d(0, 1, 0, -84deg)
+  80%
+    -webkit-transform: rotate3d(0, 1, 0, -90deg)
+  95%
+    -webkit-transform: rotate3d(0, 1, 0, -88deg)
+  100%
+    -webkit-transform: rotate3d(0, 1, 0, -90deg)
+
+/* ********************** Cube 04 ********************** */
+
+.rs-cube04
+  .rs-cube-front
+    -webkit-transform: scale3d(0.858, 0.858, 0.858) translate3d(0, 0, 164px)
+  .rs-cube-left
+    -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
+  .rs-cube-right
+    -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 164px)
+  .rs-cube-top
+    -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(1, 0, 0, 90deg) translate3d(0, 0, 164px)
+  .rs-cube-bottom
+    -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
+  &.rs-show
+    -webkit-animation: cube4 0.5s ease-in-out
+
+@-webkit-keyframes cube4
+  0%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  100%
+    -webkit-transform: rotate3d(0, 1, 0, 90deg)
+
+/* ********************** ********************** ************** ********************** ********************** */
+/* ********************** ********************** Unfold Effects ********************** ********************** */
+/* ********************** ********************** ************** ********************** ********************** */
+
+.rs-unfold01, .rs-unfold02
+  .rs-flip, .rs-multi-flip, .rs-cube
+    display: none
+  .rs-back, .rs-front
+    overflow: hidden
+    position: absolute
+    opacity: 0
+    -webkit-backface-visibility: hidden
+  &.rs-transition img
+    position: absolute
+    left: 0px
+    top: 0px
+
+/* ********************** Unfold 01 ********************** */
+
+.rs-unfold01
+  .rs-front
+    -webkit-transform-origin: 50% 100%
+  .rs-back
+    -webkit-transform-origin: 50% 0%
+  .rs-front, .rs-back
+    width: 100%
+    height: 142px
+  .rs-front.rs-front2, .rs-back.rs-back2
+    top: 142px
+  .rs-front.rs-front2 img, .rs-back.rs-back2 img
+    top: -142px
+  .rs-front.rs-front3, .rs-back.rs-back3
+    top: 284px
+  .rs-front.rs-front3 img, .rs-back.rs-back3 img
+    top: -284px
+  &.rs-show
+    .rs-front
+      &.rs-front1
+        -webkit-animation: unfold1_1Front 1s ease-in-out
+      &.rs-front2
+        -webkit-animation: unfold1_2Front 1s ease-in-out
+      &.rs-front3
+        -webkit-animation: unfold1_3Front 1s ease-in-out
+    .rs-back
+      &.rs-back1
+        -webkit-animation: unfold1_1Back 1s ease-in-out
+        -webkit-animation-delay: 0.7s
+      &.rs-back2
+        -webkit-animation: unfold1_2Back 1s ease-in-out
+        -webkit-animation-delay: 0.7s
+      &.rs-back3
+        -webkit-animation: unfold1_3Back 1s ease-in-out
+        -webkit-animation-delay: 0.7s
+
+@-webkit-keyframes unfold1_1Front
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  33%
+    -webkit-transform: rotate3d(1, 0, 0, 100deg)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, 100deg)
+
+@-webkit-keyframes unfold1_2Front
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  33%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  66%
+    -webkit-transform: rotate3d(1, 0, 0, 100deg)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, 100deg)
+
+@-webkit-keyframes unfold1_3Front
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  66%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  83%
+    -webkit-transform: rotate3d(1, 0, 0, 50deg)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, 100deg)
+
+@-webkit-keyframes unfold1_1Back
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, -100deg)
+  30%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+
+@-webkit-keyframes unfold1_2Back
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, -100deg)
+  26%
+    -webkit-transform: rotate3d(1, 0, 0, -100deg)
+  60%
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+
+@-webkit-keyframes unfold1_3Back
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, -100deg)
+  55%
+    -webkit-transform: rotate3d(1, 0, 0, -100deg)
+  78%
+    -webkit-transform: rotate3d(1, 0, 0, 28deg)
+  86%
+    -webkit-transform: rotate3d(1, 0, 0, -28deg)
+  94%
+    -webkit-transform: rotate3d(1, 0, 0, 12deg)
+  98%
+    -webkit-transform: rotate3d(1, 0, 0, -12deg)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(1, 0, 0, 0)
+
+/* ********************** Unfold 02 ********************** */
+
+.rs-unfold02
+  .rs-front
+    -webkit-transform-origin: 100% 50%
+  .rs-back
+    -webkit-transform-origin: 0% 50%
+  .rs-front, .rs-back
+    width: 110px
+    height: 100%
+  .rs-front.rs-front2, .rs-back.rs-back2
+    left: 110px
+  .rs-front.rs-front2 img, .rs-back.rs-back2 img
+    left: -110px
+  .rs-front.rs-front3, .rs-back.rs-back3
+    left: 220px
+  .rs-front.rs-front3 img, .rs-back.rs-back3 img
+    left: -220px
+  &.rs-show
+    .rs-front
+      &.rs-front1
+        -webkit-animation: unfold2_1Front 1s ease-in-out
+      &.rs-front2
+        -webkit-animation: unfold2_2Front 1s ease-in-out
+      &.rs-front3
+        -webkit-animation: unfold2_3Front 1s ease-in-out
+    .rs-back
+      &.rs-back1
+        -webkit-animation: unfold2_1Back 1s ease-in-out
+        -webkit-animation-delay: 0.9s
+      &.rs-back2
+        -webkit-animation: unfold2_2Back 1s ease-in-out
+        -webkit-animation-delay: 0.9s
+      &.rs-back3
+        -webkit-animation: unfold2_3Back 1s ease-in-out
+        -webkit-animation-delay: 0.9s
+
+@-webkit-keyframes unfold2_1Front
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  33%
+    -webkit-transform: rotate3d(0, 1, 0, -100deg)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, -100deg)
+
+@-webkit-keyframes unfold2_2Front
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  33%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  66%
+    -webkit-transform: rotate3d(0, 1, 0, -100deg)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, -100deg)
+
+@-webkit-keyframes unfold2_3Front
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  66%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  83%
+    -webkit-transform: rotate3d(0, 1, 0, -50)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, -100deg)
+
+@-webkit-keyframes unfold2_1Back
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, 100deg)
+  30%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+
+@-webkit-keyframes unfold2_2Back
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, 100deg)
+  26%
+    -webkit-transform: rotate3d(0, 1, 0, 100deg)
+  60%
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+
+@-webkit-keyframes unfold2_3Back
+  0%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, 100deg)
+  55%
+    -webkit-transform: rotate3d(0, 1, 0, 100deg)
+  78%
+    -webkit-transform: rotate3d(0, 1, 0, -28deg)
+  86%
+    -webkit-transform: rotate3d(0, 1, 0, 28deg)
+  94%
+    -webkit-transform: rotate3d(0, 1, 0, -12deg)
+  98%
+    -webkit-transform: rotate3d(0, 1, 0, 12deg)
+  100%
+    opacity: 1
+    -webkit-transform: rotate3d(0, 1, 0, 0)
+
+/* ********************** ********************** ************** ********************** ********************** */
+/* ********************** ********************** Others Effects ********************** ********************** */
+/* ********************** ********************** ************** ********************** ********************** */
+
+.rs-other01, .rs-other02, .rs-other03, .rs-other04, .rs-other05, .rs-other06, .rs-other07
+  .rs-front
+    z-index: 2
+  .rs-back
+    z-index: 1
+
+/* ********************** Other 01 ********************** */
+
+.rs-other01.rs-show .rs-front
+  -webkit-animation: example1Front 0.6s linear forwards
+
+@-webkit-keyframes example1Front
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+/* ********************** Other 02 ********************** */
+
+.rs-transition.rs-other02
+  overflow: hidden
+
+.rs-other02.rs-show
+  .rs-front, .rs-back
+    -webkit-animation-duration: 0.4s
+    -webkit-animation-timing-function: ease-out
+    -webkit-animation-fill-mode: forwards
+  .rs-front
+    -webkit-animation-name: example2Front
+  .rs-back
+    -webkit-animation-name: example2Back
+
+@-webkit-keyframes example2Front
+  0%
+    -webkit-transform: translateX(0)
+  100%
+    -webkit-transform: translateX(-#{$image_width}px)
+
+
+@-webkit-keyframes example2Back
+  0%
+    -webkit-transform: translateX(#{$image_width}px)
+  100%
+    -webkit-transform: translateX(0px)
+
+/* ********************** Other 03 ********************** */
+
+.rs-other03
+  .rs-front
+    z-index: 1
+  .rs-back
+    z-index: 2
+  &.rs-show .rs-back
+    -webkit-animation: example3Back 0.4s ease-out forwards
+
+@-webkit-keyframes example3Back
+  0%
+    -webkit-transform: rotate(40deg) scale(1.5) translate(200px, 10px)
+    opacity: 0
+  100%
+    -webkit-transform: rotate(0deg) scale(1) translate(0, 0)
+    opacity: 1
+
+/* ********************** Other 04 ********************** */
+
+.rs-other04.rs-show .rs-front
+  -webkit-animation: example4Front 0.8s ease-in-out forwards
+
+@-webkit-keyframes example4Front
+  0%
+    -webkit-transform: translateX(0)
+    z-index: 3
+  50%
+    -webkit-transform: rotateZ(-5deg) translateX(-339px)
+    z-index: 3
+  51%
+    z-index: 1
+  100%
+    -webkit-transform: rotateZ(0deg) translateX(0px)
+    z-index: 1
+
+/* ********************** Other 05 ********************** */
+
+.rs-other05.rs-show
+  .rs-front, .rs-back
+    -webkit-animation-duration: 0.8s
+    -webkit-animation-timing-function: ease-in-out
+    -webkit-animation-fill-mode: forwards
+    -webkit-transform-origin: 0% 100%
+  .rs-front
+    -webkit-animation-name: example5Front
+  .rs-back
+    -webkit-animation-name: example5Back
+
+@-webkit-keyframes example5Front
+  0%
+    z-index: 3
+  50%
+    -webkit-transform: rotateZ(-75deg)
+    z-index: 3
+  51%
+    z-index: 1
+  100%
+    -webkit-transform: rotateZ(0deg)
+    z-index: 1
+
+@-webkit-keyframes example5Back
+  0%
+    z-index: 1
+  50%
+    -webkit-transform: rotateZ(20deg)
+    z-index: 1
+  51%
+    z-index: 3
+  100%
+    -webkit-transform: rotateZ(0deg)
+    z-index: 3
+
+/* ********************** Other 06 ********************** */
+
+.rs-other06.rs-show .rs-front
+  -webkit-animation: example6Front 0.4s ease-in-out forwards
+
+@-webkit-keyframes example6Front
+  0%
+    opacity: 1
+  100%
+    -webkit-transform: rotateZ(3deg) scale(1.5)
+    opacity: 0
+
+/* ********************** Other 07 ********************** */
+
+.rs-other07.rs-show .rs-front
+  -webkit-transform-origin: 0% 100%
+  -webkit-animation: example7Front 1s ease-in-out forwards
+
+@-webkit-keyframes example7Front
+  0%
+    z-index: 3
+    -webkit-animation-timing-function: ease-in
+  20%
+    -webkit-transform: rotateZ(180deg)
+    z-index: 3
+    -webkit-animation-timing-function: ease-out
+  21%
+    z-index: 1
+  40%
+    -webkit-transform: rotateZ(370deg)
+    z-index: 1
+  60%
+    -webkit-transform: rotateZ(356deg)
+    z-index: 1
+  80%
+    -webkit-transform: rotateZ(360deg)
+    z-index: 1
+  95%
+    -webkit-transform: rotateZ(359deg)
+    z-index: 1
+  100%
+    -webkit-transform: rotateZ(360deg)
+    z-index: 1

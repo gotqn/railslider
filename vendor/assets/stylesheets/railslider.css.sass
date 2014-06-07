@@ -1,0 +1,162 @@
+div.rs-container
+
+  width: 329px
+  height: 425px
+  margin: 0px auto 40px auto
+
+  .rs-controls
+    display: none
+    height: 40px
+    position: relative
+    & label
+      display: inline-block
+    & select, a
+      display: inline-block
+      border: 1px solid #999
+      padding: 5px 20px 5px 5px
+      font-size: 15px
+      color: #444
+      background: white
+      cursor: pointer
+      background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed))
+      background: asset-data-url('arrow.png') no-repeat 100% 50%, -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      background: linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      border-radius: 5px
+      font-family: Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif
+    & select:hover, a:hover
+      color: #000
+    & select:active
+      background: #e5e5e5
+      background: -moz-linear-gradient(top, #e5e5e5 0%, white 100%)
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, white))
+      background: asset-data-url('arrow.png') no-repeat 100% 50%, -webkit-linear-gradient(top, #e5e5e5 0%, white 100%)
+      background: -o-linear-gradient(top, #e5e5e5 0%, white 100%)
+      background: -ms-linear-gradient(top, #e5e5e5 0%, white 100%)
+      background: linear-gradient(top, #e5e5e5 0%, white 100%)
+    & select:focus
+      outline: none
+    & a
+      float: right
+      padding: 5px 10px
+      font-weight: bold
+      color: #333
+      text-decoration: none
+      background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed))
+      background: -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      background: linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      &:active
+        background: #e5e5e5
+        background: -moz-linear-gradient(top, #e5e5e5 0%, white 100%)
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, white))
+        background: -webkit-linear-gradient(top, #e5e5e5 0%, white 100%)
+        background: -o-linear-gradient(top, #e5e5e5 0%, white 100%)
+        background: -ms-linear-gradient(top, #e5e5e5 0%, white 100%)
+        background: linear-gradient(top, #e5e5e5 0%, white 100%)
+      &.rs-prev
+        margin-right: 10px
+
+  .rs-wrapper
+    position: relative
+    width: 329px
+    height: 425px
+    -webkit-perspective: 1000px
+    perspective: 1000px
+
+    .rs-shadow
+      background: transparent asset-data-url('shadow.png') no-repeat center bottom
+      position: absolute
+      top: -15px
+      right: -15px
+      width: 373px
+      height: 470px
+
+  .rs-bullets
+    position: relative
+    top: 20px
+    margin: 0
+    padding: 0
+    text-align: center
+    li
+      display: inline
+      padding: 0
+      margin: 0
+      list-style: none
+    a
+      display: inline-block
+      height: 8px
+      width: 8px
+      text-indent: -9999px
+      background: #fff
+      -webkit-border-radius: 50%
+      -moz-border-radius: 50%
+      border-radius: 50%
+      -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.55) inset
+      -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.55) inset
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.55) inset
+      z-index: 25
+      &.shown
+        background: #bd9b83
+
+  .rs-cover
+    .rs-animation-command
+      position: absolute
+      width: 22px
+      height: 22px
+      top: 25px
+      right: 25px
+      z-index: 10
+      text-indent: -9999px
+      border: 0 none
+      opacity: 0
+
+    &:hover .rs-pause
+      opacity: 1
+      border: 0 none
+      text-decoration: none
+      background: none
+      -webkit-animation: pause-button-in 1s linear
+
+    .rs-pause
+      &:after, &:before
+        position: absolute
+        display: block
+        content: " "
+        top: 0
+        width: 38%
+        height: 22px
+        background: rgba(255, 255, 255, 0.5)
+      &:after
+        right: 0
+      &:before
+        left: 0
+
+    .rs-play
+      width: 1px
+      height: 1px
+      border-top: 10px solid transparent
+      border-left: 20px solid rgba(255, 255, 255, 0.5)
+      border-bottom: 10px solid transparent
+      opacity: 1
+      text-decoration: none
+      background: none
+      -webkit-animation: play-button-in 0.5s linear
+      &:hover, &:focus
+        border-bottom: 10px solid transparent
+
+@-webkit-keyframes play-button-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@-webkit-keyframes pause-button-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1

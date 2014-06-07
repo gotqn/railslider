@@ -13,8 +13,8 @@
 
                     this.containerID = params['containerID'];
                     this.teWrapper = $('#' + this.containerID + ' .rs-wrapper');
-                    this.teCover = $('#' + this.containerID + ' div.te-cover');
-                    this.teImages = $('#' + this.containerID + ' div.te-images > img');
+                    this.teCover = $('#' + this.containerID + ' div.rs-cover');
+                    this.teImages = $('#' + this.containerID + ' div.rs-images > img');
                     this.imagesCount = $(this.teImages).length;
                     this.currentImg = 0;
                     this.navNext = $('#' + this.containerID + ' .rs-next');
@@ -24,7 +24,7 @@
                     //holds selection animation option
                     this.type= $(this.te_type).val();
                     //holds animation option used during transition
-                    this.teTransition = $('#' + this.containerID + ' .te-transition');
+                    this.teTransition = $('#' + this.containerID + ' .rs-transition');
                     //flag pointing if transition is active
                     this.animated = false;
                     //bullets
@@ -100,8 +100,8 @@
                                             return false;
                                         }
 
-                                        this.teCover.removeClass('te-hide');
-                                        this.teTransition.removeClass('te-show');
+                                        this.teCover.removeClass('rs-hide');
+                                        this.teTransition.removeClass('rs-show');
                                         this.animated = false;
                                         this.te_type.prop('disabled', false);
 
@@ -118,7 +118,7 @@
                                 $(event.currentTarget).val(this.type);
                             }else{
                                 this.type = $(event.currentTarget).val();
-                                this.teTransition.removeClass().addClass('te-transition').addClass(this.type);
+                                this.teTransition.removeClass().addClass('rs-transition').addClass(this.type);
                             }
                         }, this));
 
@@ -172,8 +172,8 @@
 
                         if (this.hasPerspective) {
 
-                            this.teTransition.addClass('te-show');
-                            this.teCover.addClass('te-hide');
+                            this.teTransition.addClass('rs-show');
+                            this.teCover.addClass('rs-hide');
                         }
 
                         this.updateImages(direction);
@@ -213,8 +213,8 @@
 
                         var $currentImg = this.teImages.eq(this.currentImg);
 
-                        this.teTransition.find('div.te-front').empty().append('<img src="' + $last_img.attr('src') + '">');
-                        this.teTransition.find('div.te-back').empty().append('<img src="' + $currentImg.attr('src') + '">');
+                        this.teTransition.find('div.rs-front').empty().append('<img src="' + $last_img.attr('src') + '">');
+                        this.teTransition.find('div.rs-back').empty().append('<img src="' + $currentImg.attr('src') + '">');
 
                         this.teCover.find('img').attr('src', $currentImg.attr('src'));
 
