@@ -13,7 +13,7 @@ class ThumbnailGenerator < Rails::Generators::Base
                desc: 'specifies image height'
 
   def generate_layout
-    template 'thumbnail.rb',
+    template 'railslider.rb',
              "app/railslider/#{get_file_name}.rb"
     template 'transitions.css.sass.erb',
              "vendor/assets/stylesheets/railslider/#{get_file_name}/transitions.css.sass"
