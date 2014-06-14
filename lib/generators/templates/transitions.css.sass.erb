@@ -336,21 +336,21 @@ $slices_animation_step_value: (100-$slices_animation_first_step) / $slices_count
 @-webkit-keyframes multiflip1_1
   0%
     -webkit-transform: rotate3d(1, 0, 0, 0)
-#{$slices_animation_first_step}%
-  -webkit-transform: rotate3d(1, 0, 0, -180deg)
-100%
-  -webkit-transform: rotate3d(1, 0, 0, -180deg)
+  #{$slices_animation_first_step}%
+    -webkit-transform: rotate3d(1, 0, 0, -180deg)
+  100%
+    -webkit-transform: rotate3d(1, 0, 0, -180deg)
 
 @for $i from 2 through $slices_middle
   @-webkit-keyframes multiflip1_#{$i}
     0%
       -webkit-transform: rotate3d(1, 0, 0, 0)
-  #{($i - 1) * $slices_animation_step_value}%
-    -webkit-transform: rotate3d(1, 0, 0, 0)
-  #{$slices_animation_first_step + ($i - 1) * $slices_animation_step_value}%
-    -webkit-transform: rotate3d(1, 0, 0, -180deg)
-  100%
-    -webkit-transform: rotate3d(1, 0, 0, -180deg)
+    #{($i - 1) * $slices_animation_step_value}%
+      -webkit-transform: rotate3d(1, 0, 0, 0)
+    #{$slices_animation_first_step + ($i - 1) * $slices_animation_step_value}%
+      -webkit-transform: rotate3d(1, 0, 0, -180deg)
+    100%
+      -webkit-transform: rotate3d(1, 0, 0, -180deg)
 
 /* ********************** Multi-flip 02 ********************** */
 
