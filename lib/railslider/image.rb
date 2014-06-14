@@ -123,7 +123,7 @@ module Railslider
       for index in 1 .. 7
         @result_html +=
         "
-        <div class='<%=\"rs-multi-flip rs-card rs-flip#{index}\"%>'>
+        <div class=\"rs-multi-flip rs-card rs-flip#{index}\">
           <div class=\"rs-front\"></div>
           <div class=\"rs-back\"></div>
         </div>
