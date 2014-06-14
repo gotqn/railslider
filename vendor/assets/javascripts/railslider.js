@@ -28,7 +28,7 @@
                     //flag pointing if transition is active
                     this.animated = false;
                     //bullets
-                    this.bullets = $('#' + this.containerID + ' .rs-bullets li');
+                    this.bullets = $('#' + this.containerID + ' .rs-bullets a');
                     //auto sliding settings
                     this.isAutoSlidingEnabled = true;
                     this.direction = "next"; //"next" or "prev"
@@ -127,7 +127,7 @@
 
                             this.bullets.eq(index).on('click', $.proxy(function(event){
 
-                                var currentElementPosition = $(event.target).find('a').attr('data-position');
+                                var currentElementPosition = $(event.target).attr('data-position');
 
                                 //checking if browser supports 3D animations and an animation is not already running
                                 if(!(this.hasPerspective && this.animated) && this.currentImg + 1 != currentElementPosition){
@@ -163,7 +163,7 @@
                     },
 
                     changeBullet:function(index){
-                        this.bullets.find('a').removeClass('shown').eq(index).addClass('shown');
+                        this.bullets.removeClass('shown').eq(index).addClass('shown');
                     },
 
                     showNext:function(direction){
