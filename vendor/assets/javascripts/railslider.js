@@ -160,8 +160,6 @@
                         if(this.isAutoSlidingEnabled){
                             this.toggleAnimation();
                         }
-
-
                     },
 
                     changeBullet:function(index){
