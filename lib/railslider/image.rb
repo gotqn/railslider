@@ -3,7 +3,7 @@ module Railslider
   class Image
 
     # image use if such is not specified
-    DEMO_IMAGES = ['demo/1.jpg','demo/2.jpg','demo/3.jpg','demo/4.jpg','demo/5.jpg']
+    DEMO_IMAGES = ['assets/demo/1.jpg','assets/demo/2.jpg','assets/demo/3.jpg','assets/demo/4.jpg','assets/demo/5.jpg']
 
     # class attributes
     attr_accessor :id,             #  elements id
@@ -22,7 +22,7 @@ module Railslider
     # extracting input parameters and using defaults if necessary
     def initialize(parameters = {})
       @id = parameters.fetch(:url, 'demo')
-      @images_urls = parameters.fetch(:@images_urls, DEMO_IMAGES)#.map!{|url| asset_path(url)}
+      @images_urls = parameters.fetch(:@images_urls, DEMO_IMAGES)
 
       @effect = parameters.fetch(:effect, 'flip01')
     end
