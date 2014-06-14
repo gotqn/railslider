@@ -6,21 +6,24 @@ module Railslider
     DEMO_IMAGES = ['demo/1.jpg','demo/2.jpg','demo/3.jpg','demo/4.jpg','demo/5.jpg']
 
     # class attributes
-    attr_accessor :id,             # elements id
-                  :images_urls,    # array holding images urls
+    attr_accessor :id,             #  elements id
+                                   #
+                  :images_urls,    #  array holding images urls
+                                   #
                   :effect          #  initial effect to be used:
                                    #
-                                   #  flips: flip01, flip02, flip03, flip04
-                                   #  rotations: rotation01, rotation02, rotation03, rotation04, rotation05
-                                   #  multi-flips: multi-flip01, multi-flip02, multi-flip03
-                                   #  cubes: cube01, cube02, cube03, cube04
-                                   #  unfold: unfold01, unfold02
-                                   #  other: other01, other02, other03 ,other04 ,other05 ,other06 ,other07
+                                   #    flips: flip01, flip02, flip03, flip04
+                                   #    rotations: rotation01, rotation02, rotation03, rotation04, rotation05
+                                   #    multi-flips: multi-flip01, multi-flip02, multi-flip03
+                                   #    cubes: cube01, cube02, cube03, cube04
+                                   #    unfold: unfold01, unfold02
+                                   #    other: other01, other02, other03 ,other04 ,other05 ,other06 ,other07
 
     # extracting input parameters and using defaults if necessary
     def initialize(parameters = {})
       @id = parameters.fetch(:url, 'demo')
-      @images_urls = parameters.fetch(:@images_urls, DEMO_IMAGES)
+      @images_urls = parameters.fetch(:@images_urls, DEMO_IMAGES).map!{|url| asset_data_url(url)}
+
       @effect = parameters.fetch(:effect, 'flip01')
     end
 
@@ -57,6 +60,8 @@ module Railslider
         @result_html += '</div>'
       @result_html += render_bullets
       @result_html += '</div>'
+
+      @result_html.html_safe
     end
 
     def render_controls
