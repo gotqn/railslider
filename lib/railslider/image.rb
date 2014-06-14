@@ -3,7 +3,7 @@ module Railslider
   class Image
 
     # image use if such is not specified
-    DEMO_IMAGES = ['assets/demo/1.jpg','assets/demo/2.jpg','assets/demo/3.jpg','assets/demo/4.jpg','assets/demo/5.jpg']
+    DEMO_IMAGES = ['/assets/demo/1.jpg','/assets/demo/2.jpg','/assets/demo/3.jpg','/assets/demo/4.jpg','/assets/demo/5.jpg']
 
     # class attributes
     attr_accessor :id,             #  elements id
