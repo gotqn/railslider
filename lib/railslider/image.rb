@@ -25,8 +25,8 @@ module Railslider
 
     # extracting input parameters and using defaults if necessary
     def initialize(parameters = {})
-      @id = parameters.fetch(:url, 'demo')
-      @images_urls = parameters.fetch(:@images_urls, DEMO_IMAGES)
+      @id = parameters.fetch(:id, 'demo')
+      @images_urls = parameters.fetch(:images_urls, DEMO_IMAGES)
 
       @effect = parameters.fetch(:effect, 'flip01')
     end
