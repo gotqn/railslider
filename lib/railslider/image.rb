@@ -169,7 +169,7 @@ module Railslider
       @result_html += '<ul class="rs-bullets">'
 
       @images_urls.each_with_index do |url, index|
-        @result_html += "<li><a data-position=\"#{index}\" href=\"#\">hidden text</a></li>"
+        @result_html += "<li><a data-position=\"#{index+1}\" href=\"#\">hidden text</a></li>"
       end
       @result_html += '</ul>'
     end
