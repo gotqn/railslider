@@ -53,14 +53,16 @@ module Railslider
             @result_html += "<img src=\"#{url}\"/>"
           end
           @result_html += '</div>'
-        @result_html += '<div class="rs-cover">'
-          @result_html += '<a class="rs-animation-command rs-pause" href="javascript:void(0)">Play/Pause</a>'
-          @result_html += "<img src=\"#{@images_urls.first}\"/>"
-        @result_html += '</div>'
-        @result_html += render_flips
-        @result_html += render_multi_flips
-        @result_html += render_cubes
-        @result_html += render_unfolds
+          @result_html += '<div class="rs-cover">'
+            @result_html += '<a class="rs-animation-command rs-pause" href="javascript:void(0)">Play/Pause</a>'
+            @result_html += "<img src=\"#{@images_urls.first}\"/>"
+          @result_html += '</div>'
+          @result_html += '<div class="rs-transition">'
+            @result_html += render_flips
+            @result_html += render_multi_flips
+            @result_html += render_cubes
+            @result_html += render_unfolds
+          @result_html += '</div>'
         @result_html += '</div>'
       @result_html += render_bullets
       @result_html += '</div>'
