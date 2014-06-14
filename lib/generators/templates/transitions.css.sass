@@ -1,5 +1,6 @@
-$image_width: 329
-$image_height: 425
+$image_width: 329 //+ 3
+$image_height: 425 //+ 5
+
 $slices_count: 7
 
 
@@ -7,53 +8,45 @@ $slices_count: 7
 $slices_width: $image_width / $slices_count
 $slices_middle: ($slices_count+1) / 2
 
-.rs-transition, .rs-cover.rs-hide, .rs-images
+
+.te-transition, .te-cover.te-hide, .te-images
   display: none
 
-.rs-transition, .rs-cover
+.te-transition, .te-cover
   position: absolute
   width: #{$image_width}px
   height: #{$image_height}px
   top: 0px
   left: 0px
 
-.rs-transition.rs-show
+.te-transition.te-show
   display: block
 
-.rs-card, .rs-back, .rs-front
+.te-card, .te-back, .te-front
   width: 100%
   height: 100%
   position: absolute
 
-.rs-card, .rs-cover, .rs-transition
+.te-card, .te-cover, .te-transition
   -webkit-transform-style: preserve-3d
-  -moz-transform-style: preserve-3d
-  -o-transform-style: preserve-3d
-  transform-style: preserve-3d
 
 /* ********************** ********************** ************ ********************** ********************** */
 /* ********************** ********************** Flip Effects ********************** ********************** */
 /* ********************** ********************** ************ ********************** ********************** */
 
 .rs-flip01, .rs-flip02, .rs-flip03, .rs-flip04
-  .rs-multi-flip, .rs-cube, .rs-unfold
+  .te-multi-flip, .te-cube, .te-unfold
     display: none
 
 /* ********************** Flip 01 ********************** */
 
 .rs-flip01
-  .rs-front, .rs-back
+  .te-front, .te-back
     -webkit-backface-visibility: hidden
-    -moz-backface-visibility: hidden
-    backface-visibility: hidden
-  .rs-back
+  .te-back
     -webkit-transform: rotate3d(1, 0, 0, -180deg)
-    -moz-transition: rotate3d(1, 0, 0, -180deg)
-    transition: rotate3d(1, 0, 0, -180deg)
-  &.rs-show .rs-card
+  &.te-show .te-card
     -webkit-animation: rs-flip01 1s ease-in-out forwards
-    -moz-animation: rs-flip01 1s ease-in-out forwards
-    animation: rs-flip01 1s ease-in-out forwards
 
 @-webkit-keyframes rs-flip01
   0%
@@ -61,27 +54,14 @@ $slices_middle: ($slices_count+1) / 2
   100%
     -webkit-transform: rotate3d(1, 0, 0, -180deg)
 
-@-moz-keyframes rs-flip01
-  0%
-    -moz-transition: rotate3d(1, 0, 0, 0deg)
-  100%
-    -moz-transition: rotate3d(1, 0, 0, -180deg)
-
-@keyframes rs-flip01
-  0%
-    transition: rotate3d(1, 0, 0, 0deg)
-  100%
-    transition: rotate3d(1, 0, 0, -180deg)
-
-
 /* ********************** Flip 02 ********************** */
 
 .rs-flip02
-  .rs-front, .rs-back
+  .te-front, .te-back
     -webkit-backface-visibility: hidden
-  .rs-back
+  .te-back
     -webkit-transform: rotate3d(1, 0, 0, -180deg)
-  &.rs-show .rs-card
+  &.te-show .te-card
     -webkit-animation: flip02 1s ease-in-out forwards
     -webkit-transform-origin: 50% 0%
 
@@ -94,11 +74,11 @@ $slices_middle: ($slices_count+1) / 2
 /* ********************** Flip 03 ********************** */
 
 .rs-flip03
-  .rs-front, .rs-back
+  .te-front, .te-back
     -webkit-backface-visibility: hidden
-  .rs-back
+  .te-back
     -webkit-transform: rotate3d(0, 1, 0, -180deg)
-  &.rs-show .rs-card
+  &.te-show .te-card
     -webkit-animation: flip03 1s ease-in-out forwards
 
 @-webkit-keyframes flip03
@@ -118,11 +98,11 @@ $slices_middle: ($slices_count+1) / 2
 /* ********************** Flip 04 ********************** */
 
 .rs-flip04
-  .rs-front, .rs-back
+  .te-front, .te-back
     -webkit-backface-visibility: hidden
-  .rs-back
+  .te-back
     -webkit-transform: rotate3d(0, 1, 0, -180deg)
-  &.rs-show .rs-card
+  &.te-show .te-card
     -webkit-animation: flip04 1s ease-in-out forwards
     -webkit-transform-origin: 100% 50%
 
@@ -137,23 +117,23 @@ $slices_middle: ($slices_count+1) / 2
 /* ********************** ********************** **************** ********************** ********************** */
 
 .rs-rotation01, .rs-rotation02, .rs-rotation03, .rs-rotation04, .rs-rotation05, .rs-rotation06
-  .rs-multi-flip, .rs-cube, .rs-unfold
+  .te-multi-flip, .te-cube, .te-unfold
     display: none
 
 /* ********************** Rotation 01 ********************** */
 
 .rs-rotation01
-  .rs-front
+  .te-front
     z-index: 2
-  .rs-back
+  .te-back
     z-index: 1
     -webkit-backface-visibility: hidden
-  &.rs-show
-    .rs-front, .rs-back
+  &.te-show
+    .te-front, .te-back
       -webkit-transform-origin: 50% 100%
-    .rs-front
+    .te-front
       -webkit-animation: rotation01Front 0.8s linear
-    .rs-back
+    .te-back
       -webkit-animation: rotation01Back 0.8s linear
 
 @-webkit-keyframes rotation01Front
@@ -181,12 +161,12 @@ $slices_middle: ($slices_count+1) / 2
 /* ********************** Rotation 02 ********************** */
 
 .rs-rotation02
-  .rs-front
+  .te-front
     z-index: 2
-  .rs-back
+  .te-back
     z-index: 1
     -webkit-backface-visibility: hidden
-  &.rs-show .rs-front
+  &.te-show .te-front
     -webkit-animation: rotation02Front 0.8s linear
     -webkit-transform-origin: 50% 100%
 
@@ -207,12 +187,12 @@ $slices_middle: ($slices_count+1) / 2
 /* ********************** Rotation 03 ********************** */
 
 .rs-rotation03
-  .rs-front
+  .te-front
     z-index: 2
-  .rs-back
+  .te-back
     z-index: 1
     -webkit-backface-visibility: hidden
-  &.rs-show .rs-front
+  &.te-show .te-front
     -webkit-animation: rotation03Front 0.8s linear
     -webkit-transform-origin: 100% 50%
 
@@ -230,17 +210,17 @@ $slices_middle: ($slices_count+1) / 2
 /* ********************** Rotation 04 ********************** */
 
 .rs-rotation04
-  .rs-front
+  .te-front
     z-index: 2
-  .rs-back
+  .te-back
     z-index: 1
     -webkit-backface-visibility: hidden
-  &.rs-show
-    .rs-front, .rs-back
+  &.te-show
+    .te-front, .te-back
       -webkit-transform-origin: 0% 50%
-    .rs-front
+    .te-front
       -webkit-animation: rotation04Front 0.8s linear
-    .rs-back
+    .te-back
       -webkit-animation: rotation04Back 0.8s ease-in-out
 
 @-webkit-keyframes rotation04Front
@@ -282,12 +262,12 @@ $slices_middle: ($slices_count+1) / 2
 /* ********************** Rotation 05 ********************** */
 
 .rs-rotation05
-  .rs-front
+  .te-front
     z-index: 2
-  .rs-back
+  .te-back
     z-index: 1
     -webkit-backface-visibility: hidden
-  &.rs-show .rs-front
+  &.te-show .te-front
     -webkit-transform-origin: 0% 50%
     -webkit-animation: rotation05Front 0.8s linear
 
@@ -308,28 +288,28 @@ $slices_middle: ($slices_count+1) / 2
 
 .rs-multi-flip01, .rs-multi-flip02, .rs-multi-flip03
 
-  .rs-flip, .rs-cube, .rs-unfold
+  .te-flip, .te-cube, .te-unfold
     display: none
-  .rs-back, .rs-front
+  .te-back, .te-front
     width: #{$slices_width}px
     height: 100%
     overflow: hidden
     position: absolute
     -webkit-backface-visibility: hidden
-  .rs-front
+  .te-front
     z-index: 2
-  .rs-back
+  .te-back
     z-index: 1
-  &.rs-transition
+  &.te-transition
 
     img
       position: absolute
     @for $i from 1 through $slices_count
-      .rs-flip#{$i} img
+      .te-flip#{$i} img
         left: -#{($i - 1) * $slices_width}px
 
   @for $i from 1 through $slices_count
-    .rs-flip#{$i}
+    .te-flip#{$i}
       left: #{($i - 1) * $slices_width}px
 
 /* ********************** Multi-flip 01 ********************** */
@@ -338,20 +318,20 @@ $slices_animation_first_step: 60
 $slices_animation_step_value: (100-$slices_animation_first_step) / $slices_count
 
 .rs-multi-flip01
-  .rs-back
+  .te-back
     -webkit-transform: rotate3d(1, 0, 0, -180deg)
-  &.rs-show .rs-card
+  &.te-show .te-card
     -webkit-animation-duration: 1.5s
     -webkit-animation-timing-function: ease-in-out
     -webkit-animation-fill-mode: forwards
 
   @for $i from 1 through $slices_count
     @if $i <= $slices_middle
-      .rs-flip#{$i}
+      .te-flip#{$i}
         z-index: #{$i}
         -webkit-animation-name: multiflip1_#{$slices_middle - $i + 1}
     @else
-      .rs-flip#{$i}
+      .te-flip#{$i}
         z-index: #{$slices_count - $i + 1}
         -webkit-animation-name: multiflip1_#{$slices_middle - $slices_count + $i}
 
@@ -380,20 +360,20 @@ $slices_animation_first_step:  33
 $slices_animation_step_value: $slices_animation_first_step / $slices_count
 
 .rs-multi-flip02
-  .rs-back
+  .te-back
     -webkit-transform: rotate3d(1, 0, 0, -180deg)
-  &.rs-show .rs-card
+  &.te-show .te-card
     -webkit-animation-duration: 1.5s
     -webkit-animation-timing-function: ease-in-out
     -webkit-animation-fill-mode: forwards
 
   @for $i from 1 through $slices_count
     @if $i <= $slices_middle
-      .rs-flip#{$i}
+      .te-flip#{$i}
         z-index: #{$i}
         -webkit-animation-name: multiflip2_#{$i}
     @else
-      .rs-flip#{$i}
+      .te-flip#{$i}
         z-index: #{$slices_count - $i + 1}
         -webkit-animation-name: multiflip2_#{$i}
 
@@ -426,20 +406,20 @@ $slices_animation_first_step:  33
 $slices_animation_step_value: $slices_animation_first_step / $slices_count
 
 .rs-multi-flip03
-  .rs-back
+  .te-back
     -webkit-transform: rotate3d(0, 1, 0, -180deg)
-  &.rs-show .rs-card
+  &.te-show .te-card
     -webkit-animation-duration: 1.5s
     -webkit-animation-timing-function: ease-in-out
     -webkit-animation-fill-mode: forwards
     -webkit-transform-origin: 0% 50%
   @for $i from 1 through $slices_count
     @if $i <= $slices_middle
-      .rs-flip#{$i}
+      .te-flip#{$i}
         z-index: #{$i}
         -webkit-animation-name: multiflip3_#{$i}
     @else
-      .rs-flip#{$i}
+      .te-flip#{$i}
         z-index: #{$slices_count - $i + 1}
         -webkit-animation-name: multiflip3_#{$i}
 
@@ -467,17 +447,17 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 /* ********************** ********************** ************ ********************** ********************** */
 
 .rs-cube01, .rs-cube02, .rs-cube03, .rs-cube04
-  .rs-flip, .rs-multi-flip, .rs-unfold
+  .te-flip, .te-multi-flip, .te-unfold
     display: none
-  .rs-card
+  .te-card
     display: none
-  .rs-back
+  .te-back
     -webkit-backface-visibility: hidden
     z-index: 1
-  .rs-front
+  .te-front
     -webkit-backface-visibility: hidden
     z-index: 2
-  .rs-cube-face
+  .te-cube-face
     position: absolute
     width: 329px
     height: 425px
@@ -487,17 +467,17 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 /* ********************** Cube 01 ********************** */
 
 .rs-cube01
-  .rs-cube-front
+  .te-cube-front
     -webkit-transform: scale3d(0.825, 0.825, 0.825) translate3d(0, 0, 212px)
-  .rs-cube-top
+  .te-cube-top
     -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(1, 0, 0, 90deg) translate3d(0, 0, 212px)
-  .rs-cube-bottom
+  .te-cube-bottom
     -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(1, 0, 0, -90deg) translate3d(0, 0, 212px)
-  .rs-cube-right
+  .te-cube-right
     -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 212px)
-  .rs-cube-left
+  .te-cube-left
     -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 212px)
-  &.rs-show
+  &.te-show
     -webkit-animation: cube1 0.5s ease-in-out
 
 @-webkit-keyframes cube1
@@ -509,17 +489,17 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 /* ********************** Cube 02 ********************** */
 
 .rs-cube02
-  .rs-cube-front
+  .te-cube-front
     -webkit-transform: scale3d(0.825, 0.825, 0.825) translate3d(0, 0, 212px)
-  .rs-cube-bottom
+  .te-cube-bottom
     -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(1, 0, 0, -90deg) translate3d(0, 0, 212px)
-  .rs-cube-top
+  .te-cube-top
     -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(1, 0, 0, 90deg) translate3d(0, 0, 212px)
-  .rs-cube-right
+  .te-cube-right
     -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 212px)
-  .rs-cube-left
+  .te-cube-left
     -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 212px)
-  &.rs-show
+  &.te-show
     -webkit-animation: cube2 0.5s ease-in-out
 
 @-webkit-keyframes cube2
@@ -531,17 +511,17 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 /* ********************** Cube 03 ********************** */
 
 .rs-cube03
-  .rs-cube-front
+  .te-cube-front
     -webkit-transform: scale3d(0.858, 0.858, 0.858) translate3d(0, 0, 164px)
-  .rs-cube-right
+  .te-cube-right
     -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 164px)
-  .rs-cube-left
+  .te-cube-left
     -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
-  .rs-cube-top
+  .te-cube-top
     -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(1, 0, 0, 90deg) translate3d(0, 0, 164px)
-  .rs-cube-bottom
+  .te-cube-bottom
     -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
-  &.rs-show
+  &.te-show
     -webkit-animation: cube3 1s ease-in-out
 
 @-webkit-keyframes cube3
@@ -561,17 +541,17 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 /* ********************** Cube 04 ********************** */
 
 .rs-cube04
-  .rs-cube-front
+  .te-cube-front
     -webkit-transform: scale3d(0.858, 0.858, 0.858) translate3d(0, 0, 164px)
-  .rs-cube-left
+  .te-cube-left
     -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
-  .rs-cube-right
+  .te-cube-right
     -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, 90deg) translate3d(0, 0, 164px)
-  .rs-cube-top
+  .te-cube-top
     -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(1, 0, 0, 90deg) translate3d(0, 0, 164px)
-  .rs-cube-bottom
+  .te-cube-bottom
     -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
-  &.rs-show
+  &.te-show
     -webkit-animation: cube4 0.5s ease-in-out
 
 @-webkit-keyframes cube4
@@ -585,14 +565,14 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 /* ********************** ********************** ************** ********************** ********************** */
 
 .rs-unfold01, .rs-unfold02
-  .rs-flip, .rs-multi-flip, .rs-cube
+  .te-flip, .te-multi-flip, .te-cube
     display: none
-  .rs-back, .rs-front
+  .te-back, .te-front
     overflow: hidden
     position: absolute
     opacity: 0
     -webkit-backface-visibility: hidden
-  &.rs-transition img
+  &.te-transition img
     position: absolute
     left: 0px
     top: 0px
@@ -600,37 +580,37 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 /* ********************** Unfold 01 ********************** */
 
 .rs-unfold01
-  .rs-front
+  .te-front
     -webkit-transform-origin: 50% 100%
-  .rs-back
+  .te-back
     -webkit-transform-origin: 50% 0%
-  .rs-front, .rs-back
+  .te-front, .te-back
     width: 100%
     height: 142px
-  .rs-front.rs-front2, .rs-back.rs-back2
+  .te-front.te-front2, .te-back.te-back2
     top: 142px
-  .rs-front.rs-front2 img, .rs-back.rs-back2 img
+  .te-front.te-front2 img, .te-back.te-back2 img
     top: -142px
-  .rs-front.rs-front3, .rs-back.rs-back3
+  .te-front.te-front3, .te-back.te-back3
     top: 284px
-  .rs-front.rs-front3 img, .rs-back.rs-back3 img
+  .te-front.te-front3 img, .te-back.te-back3 img
     top: -284px
-  &.rs-show
-    .rs-front
-      &.rs-front1
+  &.te-show
+    .te-front
+      &.te-front1
         -webkit-animation: unfold1_1Front 1s ease-in-out
-      &.rs-front2
+      &.te-front2
         -webkit-animation: unfold1_2Front 1s ease-in-out
-      &.rs-front3
+      &.te-front3
         -webkit-animation: unfold1_3Front 1s ease-in-out
-    .rs-back
-      &.rs-back1
+    .te-back
+      &.te-back1
         -webkit-animation: unfold1_1Back 1s ease-in-out
         -webkit-animation-delay: 0.7s
-      &.rs-back2
+      &.te-back2
         -webkit-animation: unfold1_2Back 1s ease-in-out
         -webkit-animation-delay: 0.7s
-      &.rs-back3
+      &.te-back3
         -webkit-animation: unfold1_3Back 1s ease-in-out
         -webkit-animation-delay: 0.7s
 
@@ -712,37 +692,37 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 /* ********************** Unfold 02 ********************** */
 
 .rs-unfold02
-  .rs-front
+  .te-front
     -webkit-transform-origin: 100% 50%
-  .rs-back
+  .te-back
     -webkit-transform-origin: 0% 50%
-  .rs-front, .rs-back
+  .te-front, .te-back
     width: 110px
     height: 100%
-  .rs-front.rs-front2, .rs-back.rs-back2
+  .te-front.te-front2, .te-back.te-back2
     left: 110px
-  .rs-front.rs-front2 img, .rs-back.rs-back2 img
+  .te-front.te-front2 img, .te-back.te-back2 img
     left: -110px
-  .rs-front.rs-front3, .rs-back.rs-back3
+  .te-front.te-front3, .te-back.te-back3
     left: 220px
-  .rs-front.rs-front3 img, .rs-back.rs-back3 img
+  .te-front.te-front3 img, .te-back.te-back3 img
     left: -220px
-  &.rs-show
-    .rs-front
-      &.rs-front1
+  &.te-show
+    .te-front
+      &.te-front1
         -webkit-animation: unfold2_1Front 1s ease-in-out
-      &.rs-front2
+      &.te-front2
         -webkit-animation: unfold2_2Front 1s ease-in-out
-      &.rs-front3
+      &.te-front3
         -webkit-animation: unfold2_3Front 1s ease-in-out
-    .rs-back
-      &.rs-back1
+    .te-back
+      &.te-back1
         -webkit-animation: unfold2_1Back 1s ease-in-out
         -webkit-animation-delay: 0.9s
-      &.rs-back2
+      &.te-back2
         -webkit-animation: unfold2_2Back 1s ease-in-out
         -webkit-animation-delay: 0.9s
-      &.rs-back3
+      &.te-back3
         -webkit-animation: unfold2_3Back 1s ease-in-out
         -webkit-animation-delay: 0.9s
 
@@ -826,14 +806,14 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 /* ********************** ********************** ************** ********************** ********************** */
 
 .rs-other01, .rs-other02, .rs-other03, .rs-other04, .rs-other05, .rs-other06, .rs-other07
-  .rs-front
+  .te-front
     z-index: 2
-  .rs-back
+  .te-back
     z-index: 1
 
 /* ********************** Other 01 ********************** */
 
-.rs-other01.rs-show .rs-front
+.rs-other01.te-show .te-front
   -webkit-animation: example1Front 0.6s linear forwards
 
 @-webkit-keyframes example1Front
@@ -844,17 +824,17 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 
 /* ********************** Other 02 ********************** */
 
-.rs-transition.rs-other02
+.te-transition.rs-other02
   overflow: hidden
 
-.rs-other02.rs-show
-  .rs-front, .rs-back
+.rs-other02.te-show
+  .te-front, .te-back
     -webkit-animation-duration: 0.4s
     -webkit-animation-timing-function: ease-out
     -webkit-animation-fill-mode: forwards
-  .rs-front
+  .te-front
     -webkit-animation-name: example2Front
-  .rs-back
+  .te-back
     -webkit-animation-name: example2Back
 
 @-webkit-keyframes example2Front
@@ -873,11 +853,11 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 /* ********************** Other 03 ********************** */
 
 .rs-other03
-  .rs-front
+  .te-front
     z-index: 1
-  .rs-back
+  .te-back
     z-index: 2
-  &.rs-show .rs-back
+  &.te-show .te-back
     -webkit-animation: example3Back 0.4s ease-out forwards
 
 @-webkit-keyframes example3Back
@@ -890,7 +870,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 
 /* ********************** Other 04 ********************** */
 
-.rs-other04.rs-show .rs-front
+.rs-other04.te-show .te-front
   -webkit-animation: example4Front 0.8s ease-in-out forwards
 
 @-webkit-keyframes example4Front
@@ -908,15 +888,15 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 
 /* ********************** Other 05 ********************** */
 
-.rs-other05.rs-show
-  .rs-front, .rs-back
+.rs-other05.te-show
+  .te-front, .te-back
     -webkit-animation-duration: 0.8s
     -webkit-animation-timing-function: ease-in-out
     -webkit-animation-fill-mode: forwards
     -webkit-transform-origin: 0% 100%
-  .rs-front
+  .te-front
     -webkit-animation-name: example5Front
-  .rs-back
+  .te-back
     -webkit-animation-name: example5Back
 
 @-webkit-keyframes example5Front
@@ -945,7 +925,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 
 /* ********************** Other 06 ********************** */
 
-.rs-other06.rs-show .rs-front
+.rs-other06.te-show .te-front
   -webkit-animation: example6Front 0.4s ease-in-out forwards
 
 @-webkit-keyframes example6Front
@@ -957,7 +937,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 
 /* ********************** Other 07 ********************** */
 
-.rs-other07.rs-show .rs-front
+.rs-other07.te-show .te-front
   -webkit-transform-origin: 0% 100%
   -webkit-animation: example7Front 1s ease-in-out forwards
 
