@@ -145,7 +145,7 @@
                         this.changeBullet(this.currentImg);
 
                         //handling commands ("play" and "pause") events
-                        this.teCover.on('click','.rs-animation-command',$.proxy(function() {
+                        this.teCover.on('click','.rs-animation-command',$.proxy(function(event) {
                             this.toggleAnimation();
                             if($(event.target).hasClass('rs-pause')){
                                 $(event.target).removeClass('rs-pause');

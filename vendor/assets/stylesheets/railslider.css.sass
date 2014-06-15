@@ -115,6 +115,8 @@ div.rs-container
       text-decoration: none
       background: none
       -webkit-animation: pause-button-in 1s linear
+      -moz-animation: pause-button-in 1s linear
+      -animation: pause-button-in 1s linear
     .rs-pause
       &:after, &:before
         position: absolute
@@ -138,6 +140,8 @@ div.rs-container
       text-decoration: none
       background: none
       -webkit-animation: play-button-in 0.5s linear
+      -moz-animation: play-button-in 0.5s linear
+      animation: play-button-in 0.5s linear
       &:hover, &:focus
         border-bottom: 10px solid transparent
 
@@ -152,3 +156,28 @@ div.rs-container
     opacity: 0
   100%
     opacity: 1
+
+@-moz-keyframes play-button-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@-moz-keyframes pause-button-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes play-button-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes pause-button-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
