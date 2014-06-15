@@ -1,9 +1,7 @@
 div.rs-container
-
   width: 329px
   height: 425px
   margin: 0px auto 40px auto
-
   .rs-controls
     display: none
     height: 40px
@@ -60,14 +58,13 @@ div.rs-container
         background: linear-gradient(top, #e5e5e5 0%, white 100%)
       &.rs-prev
         margin-right: 10px
-
   .rs-wrapper
     position: relative
     width: 329px
     height: 425px
     -webkit-perspective: 1000px
     perspective: 1000px
-
+    -moz-perspective: 1000px
     .rs-shadow
       background: transparent asset-data-url('shadow.png') no-repeat center bottom
       position: absolute
@@ -75,7 +72,6 @@ div.rs-container
       right: -15px
       width: 373px
       height: 470px
-
   .rs-bullets
     position: relative
     top: 20px
@@ -102,7 +98,6 @@ div.rs-container
       z-index: 25
       &.shown
         background: #bd9b83
-
   .rs-cover
     .rs-animation-command
       position: absolute
@@ -114,14 +109,12 @@ div.rs-container
       text-indent: -9999px
       border: 0 none
       opacity: 0
-
     &:hover .rs-pause
       opacity: 1
       border: 0 none
       text-decoration: none
       background: none
       -webkit-animation: pause-button-in 1s linear
-
     .rs-pause
       &:after, &:before
         position: absolute
@@ -135,7 +128,6 @@ div.rs-container
         right: 0
       &:before
         left: 0
-
     .rs-play
       width: 1px
       height: 1px
