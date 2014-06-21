@@ -9,8 +9,8 @@ class RailsliderGenerator < Rails::Generators::Base
   def generate_layout
     template 'railslider.rb',
              "app/railslider/#{get_file_name}.rb"
-    template 'transitions.css.sass',
-             "vendor/assets/stylesheets/railslider/#{get_file_name}/transitions.css.sass"
+    template 'transitions.css.sass.erb',
+             "vendor/assets/stylesheets/railslider/#{get_file_name}/transitions.css.sass.erb"
   end
 
   private
