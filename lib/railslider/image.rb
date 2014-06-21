@@ -41,9 +41,9 @@ module Railslider
     end
 
     # rendering images with rails slider effects
-    def render(class_name)
+    def render
       @result_html = ''
-      @result_html += "<div class=\"rs-container #{class_name}\" id=\"#{@id}\">"
+      @result_html += "<div class=\"rs-container #{self.to_s}\" id=\"#{@id}\">"
         @result_html += render_controls.gsub("<option value=\"rs-#{@effect}\">",
                                              "<option value=\"rs-#{@effect}\" selected=\"selected\">")
         @result_html += "<div class=\"rs-wrapper\">"
