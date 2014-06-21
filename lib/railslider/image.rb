@@ -20,8 +20,8 @@ module Railslider
                                    #    rotations: rotation01, rotation02, rotation03, rotation04, rotation05
                                    #    multi-flips: multi-flip01, multi-flip02, multi-flip03
                                    #    cubes: cube01, cube02, cube03, cube04
-                                   #    unfold: unfold01, unfold02
-                                   #    other: other01, other02, other03 ,other04 ,other05 ,other06 ,other07
+                                   #    unfolds: unfold01, unfold02
+                                   #    others: other01, other02, other03 ,other04 ,other05 ,other06 ,other07
 
     # extracting input parameters and using defaults if necessary
     def initialize(parameters = {})
