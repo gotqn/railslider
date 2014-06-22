@@ -72,18 +72,18 @@ $slices_middle: ($slices_count+1) / 2
       -webkit-transform: rotate3d(1, 0, 0, -180deg)
       transform: rotate3d(1, 0, 0, -180deg)
     &.rs-show .rs-card
-      -webkit-animation: flip02 1s ease-in-out forwards
+      -webkit-animation: rs-flip02 1s ease-in-out forwards
       -webkit-transform-origin: 50% 0%
-      animation: flip02 1s ease-in-out forwards
+      animation: rs-flip02 1s ease-in-out forwards
       transform-origin: 50% 0%
 
-@-webkit-keyframes flip02
+@-webkit-keyframes rs-flip02
   0%
     -webkit-transform: rotate3d(1, 0, 0, 0)
   100%
     -webkit-transform: rotate3d(1, 0, 0, -180deg) translate3d(0, -#{$image_height}px, 0)
 
-@keyframes flip02
+@keyframes rs-flip02
   0%
     transform: rotate3d(1, 0, 0, 0)
   100%
@@ -100,10 +100,10 @@ $slices_middle: ($slices_count+1) / 2
       -webkit-transform: rotate3d(0, 1, 0, -180deg)
       transform: rotate3d(0, 1, 0, -180deg)
     &.rs-show .rs-card
-      -webkit-animation: flip03 1s ease-in-out forwards
-      animation: flip03 1s ease-in-out forwards
+      -webkit-animation: rs-flip03 1s ease-in-out forwards
+      animation: rs-flip03 1s ease-in-out forwards
 
-@-webkit-keyframes flip03
+@-webkit-keyframes rs-flip03
   0%
     -webkit-transform: rotate3d(0, 1, 0, 0)
   50%
@@ -117,7 +117,7 @@ $slices_middle: ($slices_count+1) / 2
   100%
     -webkit-transform: rotate3d(0, 1, 0, -180deg)
 
-@keyframes flip03
+@keyframes rs-flip03
   0%
     transform: rotate3d(0, 1, 0, 0)
   50%
@@ -142,18 +142,18 @@ $slices_middle: ($slices_count+1) / 2
       -webkit-transform: rotate3d(0, 1, 0, -180deg)
       transform: rotate3d(0, 1, 0, -180deg)
     &.rs-show .rs-card
-      -webkit-animation: flip04 1s ease-in-out forwards
+      -webkit-animation: rs-flip04 1s ease-in-out forwards
       -webkit-transform-origin: 100% 50%
-      animation: flip04 1s ease-in-out forwards
+      animation: rs-flip04 1s ease-in-out forwards
       transform-origin: 100% 50%
 
-@-webkit-keyframes flip04
+@-webkit-keyframes rs-flip04
   0%
     -webkit-transform: rotate3d(0, 1, 0, 0)
   100%
     -webkit-transform: rotate3d(0, 1, 0, -180deg) translate3d(#{$image_width}px, 0, 0)
 
-@keyframes flip04
+@keyframes rs-flip04
   0%
     transform: rotate3d(0, 1, 0, 0)
   100%
@@ -183,13 +183,13 @@ $slices_middle: ($slices_count+1) / 2
         -webkit-transform-origin: 50% 100%
         transform-origin: 50% 100%
       .rs-front
-        -webkit-animation: rotation01Front 0.8s linear
-        animation: rotation01Front 0.8s linear
+        -webkit-animation: rs-rotation01Front 0.8s linear
+        animation: rs-rotation01Front 0.8s linear
       .rs-back
-        -webkit-animation: rotation01Back 0.8s linear
-        animation: rotation01Back 0.8s linear
+        -webkit-animation: rs-rotation01Back 0.8s linear
+        animation: rs-rotation01Back 0.8s linear
 
-@-webkit-keyframes rotation01Front
+@-webkit-keyframes rs-rotation01Front
   0%
     -webkit-transform: rotate3d(1, 0, 0, 0)
     opacity: 1
@@ -200,7 +200,7 @@ $slices_middle: ($slices_count+1) / 2
     -webkit-transform: rotate3d(1, 0, 0, -180deg)
     opacity: 0
 
-@-webkit-keyframes rotation01Back
+@-webkit-keyframes rs-rotation01Back
   0%
     -webkit-transform: rotate3d(1, 0, 0, 90deg)
     opacity: 0
@@ -211,7 +211,7 @@ $slices_middle: ($slices_count+1) / 2
     -webkit-transform: rotate3d(1, 0, 0, 0)
     opacity: 1
 
-@keyframes rotation01Front
+@keyframes rs-rotation01Front
   0%
     transform: rotate3d(1, 0, 0, 0)
     opacity: 1
@@ -222,7 +222,7 @@ $slices_middle: ($slices_count+1) / 2
     transform: rotate3d(1, 0, 0, -180deg)
     opacity: 0
 
-@keyframes rotation01Back
+@keyframes rs-rotation01Back
   0%
     transform: rotate3d(1, 0, 0, 90deg)
     opacity: 0
@@ -244,12 +244,12 @@ $slices_middle: ($slices_count+1) / 2
       -webkit-backface-visibility: hidden
       backface-visibility: hidden
     &.rs-show .rs-front
-      -webkit-animation: rotation02Front 0.8s linear
+      -webkit-animation: rs-rotation02Front 0.8s linear
       -webkit-transform-origin: 50% 100%
-      animation: rotation02Front 0.8s linear
+      animation: rs-rotation02Front 0.8s linear
       transform-origin: 50% 100%
 
-@-webkit-keyframes rotation02Front
+@-webkit-keyframes rs-rotation02Front
   0%
     -webkit-transform: rotate3d(1, 0, 0, 0)
     opacity: 1
@@ -263,7 +263,7 @@ $slices_middle: ($slices_count+1) / 2
     -webkit-transform: rotate3d(1, 0, 0, -270deg)
     opacity: 0
 
-@keyframes rotation02Front
+@keyframes rs-rotation02Front
   0%
     transform: rotate3d(1, 0, 0, 0)
     opacity: 1
@@ -288,12 +288,12 @@ $slices_middle: ($slices_count+1) / 2
       -webkit-backface-visibility: hidden
       backface-visibility: hidden
     &.rs-show .rs-front
-      -webkit-animation: rotation03Front 0.8s linear
+      -webkit-animation: rs-rotation03Front 0.8s linear
       -webkit-transform-origin: 100% 50%
-      animation: rotation03Front 0.8s linear
+      animation: rs-rotation03Front 0.8s linear
       transform-origin: 100% 50%
 
-@-webkit-keyframes rotation03Front
+@-webkit-keyframes rs-rotation03Front
   0%
     -webkit-transform: rotate3d(0, 1, 0, 0)
     opacity: 1
@@ -304,7 +304,7 @@ $slices_middle: ($slices_count+1) / 2
     -webkit-transform: rotate3d(0, 1, 0, 180deg)
     opacity: 0
 
-@keyframes rotation03Front
+@keyframes rs-rotation03Front
   0%
     transform: rotate3d(0, 1, 0, 0)
     opacity: 1
@@ -330,13 +330,13 @@ $slices_middle: ($slices_count+1) / 2
         -webkit-transform-origin: 0% 50%
         transform-origin: 0% 50%
       .rs-front
-        -webkit-animation: rotation04Front 0.8s linear
-        animation: rotation04Front 0.8s linear
+        -webkit-animation: rs-rotation04Front 0.8s linear
+        animation: rs-rotation04Front 0.8s linear
       .rs-back
-        -webkit-animation: rotation04Back 0.8s ease-in-out
-        animation: rotation04Back 0.8s ease-in-out
+        -webkit-animation: rs-rotation04Back 0.8s ease-in-out
+        animation: rs-rotation04Back 0.8s ease-in-out
 
-@-webkit-keyframes rotation04Front
+@-webkit-keyframes rs-rotation04Front
   0%
     -webkit-transform: rotate3d(0, 1, 0, 0)
     opacity: 1
@@ -349,7 +349,7 @@ $slices_middle: ($slices_count+1) / 2
     -webkit-transform: rotate3d(0, 1, 0, -180deg)
     opacity: 0
 
-@-webkit-keyframes rotation04Back
+@-webkit-keyframes rs-rotation04Back
   0%
     opacity: 0
     -webkit-transform: rotate3d(0, 1, 0, 90deg)
@@ -372,7 +372,7 @@ $slices_middle: ($slices_count+1) / 2
     -webkit-transform: rotate3d(0, 1, 0, 0deg)
     opacity: 1
 
-@keyframes rotation04Front
+@keyframes rs-rotation04Front
   0%
     transform: rotate3d(0, 1, 0, 0)
     opacity: 1
@@ -385,7 +385,7 @@ $slices_middle: ($slices_count+1) / 2
     transform: rotate3d(0, 1, 0, -180deg)
     opacity: 0
 
-@keyframes rotation04Back
+@keyframes rs-rotation04Back
   0%
     opacity: 0
     transform: rotate3d(0, 1, 0, 90deg)
@@ -420,11 +420,11 @@ $slices_middle: ($slices_count+1) / 2
       backface-visibility: hidden
     &.rs-show .rs-front
       -webkit-transform-origin: 0% 50%
-      -webkit-animation: rotation05Front 0.8s linear
+      -webkit-animation: rs-rotation05Front 0.8s linear
       transform-origin: 0% 50%
-      animation: rotation05Front 0.8s linear
+      animation: rs-rotation05Front 0.8s linear
 
-@-webkit-keyframes rotation05Front
+@-webkit-keyframes rs-rotation05Front
   0%
     -webkit-transform: rotate3d(0, 1, 0, 0)
     opacity: 1
@@ -435,7 +435,7 @@ $slices_middle: ($slices_count+1) / 2
     -webkit-transform: translateX(-400px) translateZ(200px) rotate3d(0, 1, 0, -240deg)
     opacity: 0
 
-@keyframes rotation05Front
+@keyframes rs-rotation05Front
   0%
     transform: rotate3d(0, 1, 0, 0)
     opacity: 1
@@ -496,15 +496,15 @@ $slices_animation_step_value: (100-$slices_animation_first_step) / $slices_count
       @if $i <= $slices_middle
         .rs-flip#{$i}
           z-index: #{$i}
-          -webkit-animation-name: multiflip1_#{$slices_middle - $i + 1}
-          animation-name: multiflip1_#{$slices_middle - $i + 1}
+          -webkit-animation-name: rs-multiflip1_#{$slices_middle - $i + 1}
+          animation-name: rs-multiflip1_#{$slices_middle - $i + 1}
       @else
         .rs-flip#{$i}
           z-index: #{$slices_count - $i + 1}
-          -webkit-animation-name: multiflip1_#{$slices_middle - $slices_count + $i}
-          animation-name: multiflip1_#{$slices_middle - $slices_count + $i}
+          -webkit-animation-name: rs-multiflip1_#{$slices_middle - $slices_count + $i}
+          animation-name: rs-multiflip1_#{$slices_middle - $slices_count + $i}
 
-@-webkit-keyframes multiflip1_1
+@-webkit-keyframes rs-multiflip1_1
   0%
     -webkit-transform: rotate3d(1, 0, 0, 0)
   #{$slices_animation_first_step}%
@@ -513,7 +513,7 @@ $slices_animation_step_value: (100-$slices_animation_first_step) / $slices_count
     -webkit-transform: rotate3d(1, 0, 0, -180deg)
 
 @for $i from 2 through $slices_middle
-  @-webkit-keyframes multiflip1_#{$i}
+  @-webkit-keyframes rs-multiflip1_#{$i}
     0%
       -webkit-transform: rotate3d(1, 0, 0, 0)
     #{($i - 1) * $slices_animation_step_value}%
@@ -523,7 +523,7 @@ $slices_animation_step_value: (100-$slices_animation_first_step) / $slices_count
     100%
       -webkit-transform: rotate3d(1, 0, 0, -180deg)
 
-@keyframes multiflip1_1
+@keyframes rs-multiflip1_1
   0%
     transform: rotate3d(1, 0, 0, 0)
   #{$slices_animation_first_step}%
@@ -532,7 +532,7 @@ $slices_animation_step_value: (100-$slices_animation_first_step) / $slices_count
     transform: rotate3d(1, 0, 0, -180deg)
 
 @for $i from 2 through $slices_middle
-  @keyframes multiflip1_#{$i}
+  @keyframes rs-multiflip1_#{$i}
     0%
       transform: rotate3d(1, 0, 0, 0)
     #{($i - 1) * $slices_animation_step_value}%
@@ -563,15 +563,15 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
       @if $i <= $slices_middle
         .rs-flip#{$i}
           z-index: #{$i}
-          -webkit-animation-name: multiflip2_#{$i}
-          animation-name: multiflip2_#{$i}
+          -webkit-animation-name: rs-multiflip2_#{$i}
+          animation-name: rs-multiflip2_#{$i}
       @else
         .rs-flip#{$i}
           z-index: #{$slices_count - $i + 1}
-          -webkit-animation-name: multiflip2_#{$i}
-          animation-name: multiflip2_#{$i}
+          -webkit-animation-name: rs-multiflip2_#{$i}
+          animation-name: rs-multiflip2_#{$i}
 
-@-webkit-keyframes multiflip2_1
+@-webkit-keyframes rs-multiflip2_1
   0%
     -webkit-transform: rotate3d(1, 0, 0, 0)
   #{$slices_animation_first_step}%
@@ -582,7 +582,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     -webkit-transform: rotate3d(1, 0, 0, 180deg) translate3d(0, 0, 0)
 
 @for $i from 2 through $slices_count
-  @-webkit-keyframes multiflip2_#{$i}
+  @-webkit-keyframes rs-multiflip2_#{$i}
     0%
       -webkit-transform: rotate3d(1, 0, 0, 0)
     #{$slices_animation_step_value * ($i - 1)}%
@@ -594,7 +594,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     100%
       -webkit-transform: rotate3d(1, 0, 0, 180deg) translate3d(0, 0, 0)
 
-@keyframes multiflip2_1
+@keyframes rs-multiflip2_1
   0%
     transform: rotate3d(1, 0, 0, 0)
   #{$slices_animation_first_step}%
@@ -605,7 +605,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     transform: rotate3d(1, 0, 0, 180deg) translate3d(0, 0, 0)
 
 @for $i from 2 through $slices_count
-  @keyframes multiflip2_#{$i}
+  @keyframes rs-multiflip2_#{$i}
     0%
       transform: rotate3d(1, 0, 0, 0)
     #{$slices_animation_step_value * ($i - 1)}%
@@ -640,15 +640,15 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
       @if $i <= $slices_middle
         .rs-flip#{$i}
           z-index: #{$i}
-          -webkit-animation-name: multiflip3_#{$i}
-          animation-name: multiflip3_#{$i}
+          -webkit-animation-name: rs-multiflip3_#{$i}
+          animation-name: rs-multiflip3_#{$i}
       @else
         .rs-flip#{$i}
           z-index: #{$slices_count - $i + 1}
-          -webkit-animation-name: multiflip3_#{$i}
-          animation-name: multiflip3_#{$i}
+          -webkit-animation-name: rs-multiflip3_#{$i}
+          animation-name: rs-multiflip3_#{$i}
 
-@-webkit-keyframes multiflip3_1
+@-webkit-keyframes rs-multiflip3_1
   0%
     -webkit-transform: rotate3d(0, 1, 0, 0)
   #{$slices_animation_first_step * 2}%
@@ -657,7 +657,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(-#{$slices_width}px, 0, 0)
 
 @for $i from 2 through $slices_count
-  @-webkit-keyframes multiflip3_#{$i}
+  @-webkit-keyframes rs-multiflip3_#{$i}
     0%
       -webkit-transform: rotate3d(0, 1, 0, 0)
     #{$slices_animation_step_value * ($i - 1)}%
@@ -667,7 +667,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     100%
       -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(-#{$slices_width}px, 0, 0)
 
-@keyframes multiflip3_1
+@keyframes rs-multiflip3_1
   0%
     transform: rotate3d(0, 1, 0, 0)
   #{$slices_animation_first_step * 2}%
@@ -676,7 +676,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     transform: rotate3d(0, 1, 0, 180deg) translate3d(-#{$slices_width}px, 0, 0)
 
 @for $i from 2 through $slices_count
-  @keyframes multiflip3_#{$i}
+  @keyframes rs-multiflip3_#{$i}
     0%
       transform: rotate3d(0, 1, 0, 0)
     #{$slices_animation_step_value * ($i - 1)}%
@@ -731,16 +731,16 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
       -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 212px)
       transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 212px)
     &.rs-show
-      -webkit-animation: cube1 0.5s ease-in-out
-      animation: cube1 0.5s ease-in-out
+      -webkit-animation: rs-cube1 0.5s ease-in-out
+      animation: rs-cube1 0.5s ease-in-out
 
-@-webkit-keyframes cube1
+@-webkit-keyframes rs-cube1
   0%
     -webkit-transform: rotate3d(1, 0, 0, 0)
   100%
     -webkit-transform: rotate3d(1, 0, 0, -90deg)
 
-@keyframes cube1
+@keyframes rs-cube1
   0%
     transform: rotate3d(1, 0, 0, 0)
   100%
@@ -766,16 +766,16 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
       -webkit-transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 212px)
       transform: scale3d(0.825, 0.825, 0.825) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 212px)
     &.rs-show
-      -webkit-animation: cube2 0.5s ease-in-out
-      animation: cube2 0.5s ease-in-out
+      -webkit-animation: rs-cube2 0.5s ease-in-out
+      animation: rs-cube2 0.5s ease-in-out
 
-@-webkit-keyframes cube2
+@-webkit-keyframes rs-cube2
   0%
     -webkit-transform: rotate3d(1, 0, 0, 0)
   100%
     -webkit-transform: rotate3d(1, 0, 0, 90deg)
 
-@keyframes cube2
+@keyframes rs-cube2
   0%
     transform: rotate3d(1, 0, 0, 0)
   100%
@@ -801,10 +801,10 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
       -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
       transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
     &.rs-show
-      -webkit-animation: cube3 1s ease-in-out
-      animation: cube3 1s ease-in-out
+      -webkit-animation: rs-cube3 1s ease-in-out
+      animation: rs-cube3 1s ease-in-out
 
-@-webkit-keyframes cube3
+@-webkit-keyframes rs-cube3
   0%
     -webkit-transform: rotate3d(0, 1, 0, 0)
   40%
@@ -818,7 +818,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
   100%
     -webkit-transform: rotate3d(0, 1, 0, -90deg)
 
-@keyframes cube3
+@keyframes rs-cube3
   0%
     transform: rotate3d(0, 1, 0, 0)
   40%
@@ -852,16 +852,16 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
       -webkit-transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
       transform: scale3d(0.858, 0.858, 0.858) rotate3d(0, 1, 0, -90deg) translate3d(0, 0, 164px)
     &.rs-show
-      -webkit-animation: cube4 0.5s ease-in-out
-      animation: cube4 0.5s ease-in-out
+      -webkit-animation: rs-cube4 0.5s ease-in-out
+      animation: rs-cube4 0.5s ease-in-out
 
-@-webkit-keyframes cube4
+@-webkit-keyframes rs-cube4
   0%
     -webkit-transform: rotate3d(0, 1, 0, 0)
   100%
     -webkit-transform: rotate3d(0, 1, 0, 90deg)
 
-@keyframes cube4
+@keyframes rs-cube4
   0%
     transform: rotate3d(0, 1, 0, 0)
   100%
@@ -910,32 +910,32 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     &.rs-show
       .rs-front
         &.rs-front1
-          -webkit-animation: unfold1_1Front 1s ease-in-out
-          animation: unfold1_1Front 1s ease-in-out
+          -webkit-animation: rs-unfold1_1Front 1s ease-in-out
+          animation: rs-unfold1_1Front 1s ease-in-out
         &.rs-front2
-          -webkit-animation: unfold1_2Front 1s ease-in-out
-          animation: unfold1_2Front 1s ease-in-out
+          -webkit-animation: rs-unfold1_2Front 1s ease-in-out
+          animation: rs-unfold1_2Front 1s ease-in-out
         &.rs-front3
-          -webkit-animation: unfold1_3Front 1s ease-in-out
-          animation: unfold1_3Front 1s ease-in-out
+          -webkit-animation: rs-unfold1_3Front 1s ease-in-out
+          animation: rs-unfold1_3Front 1s ease-in-out
       .rs-back
         &.rs-back1
-          -webkit-animation: unfold1_1Back 1s ease-in-out
+          -webkit-animation: rs-unfold1_1Back 1s ease-in-out
           -webkit-animation-delay: 0.7s
-          animation: unfold1_1Back 1s ease-in-out
+          animation: rs-unfold1_1Back 1s ease-in-out
           animation-delay: 0.7s
         &.rs-back2
-          -webkit-animation: unfold1_2Back 1s ease-in-out
+          -webkit-animation: rs-unfold1_2Back 1s ease-in-out
           -webkit-animation-delay: 0.7s
-          animation: unfold1_2Back 1s ease-in-out
+          animation: rs-unfold1_2Back 1s ease-in-out
           animation-delay: 0.7s
         &.rs-back3
-          -webkit-animation: unfold1_3Back 1s ease-in-out
+          -webkit-animation: rs-unfold1_3Back 1s ease-in-out
           -webkit-animation-delay: 0.7s
-          animation: unfold1_3Back 1s ease-in-out
+          animation: rs-unfold1_3Back 1s ease-in-out
           animation-delay: 0.7s
 
-@-webkit-keyframes unfold1_1Front
+@-webkit-keyframes rs-unfold1_1Front
   0%
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, 0)
@@ -945,7 +945,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, 100deg)
 
-@-webkit-keyframes unfold1_2Front
+@-webkit-keyframes rs-unfold1_2Front
   0%
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, 0)
@@ -957,7 +957,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, 100deg)
 
-@-webkit-keyframes unfold1_3Front
+@-webkit-keyframes rs-unfold1_3Front
   0%
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, 0)
@@ -969,7 +969,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, 100deg)
 
-@-webkit-keyframes unfold1_1Back
+@-webkit-keyframes rs-unfold1_1Back
   0%
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, -100deg)
@@ -980,7 +980,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, 0)
 
-@-webkit-keyframes unfold1_2Back
+@-webkit-keyframes rs-unfold1_2Back
   0%
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, -100deg)
@@ -992,7 +992,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, 0)
 
-@-webkit-keyframes unfold1_3Back
+@-webkit-keyframes rs-unfold1_3Back
   0%
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, -100deg)
@@ -1010,7 +1010,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(1, 0, 0, 0)
 
-@keyframes unfold1_1Front
+@keyframes rs-unfold1_1Front
   0%
     opacity: 1
     transform: rotate3d(1, 0, 0, 0)
@@ -1020,7 +1020,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     transform: rotate3d(1, 0, 0, 100deg)
 
-@keyframes unfold1_2Front
+@keyframes rs-unfold1_2Front
   0%
     opacity: 1
     transform: rotate3d(1, 0, 0, 0)
@@ -1032,7 +1032,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     transform: rotate3d(1, 0, 0, 100deg)
 
-@keyframes unfold1_3Front
+@keyframes rs-unfold1_3Front
   0%
     opacity: 1
     transform: rotate3d(1, 0, 0, 0)
@@ -1044,7 +1044,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     transform: rotate3d(1, 0, 0, 100deg)
 
-@keyframes unfold1_1Back
+@keyframes rs-unfold1_1Back
   0%
     opacity: 1
     transform: rotate3d(1, 0, 0, -100deg)
@@ -1055,7 +1055,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     transform: rotate3d(1, 0, 0, 0)
 
-@keyframes unfold1_2Back
+@keyframes rs-unfold1_2Back
   0%
     opacity: 1
     transform: rotate3d(1, 0, 0, -100deg)
@@ -1067,7 +1067,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     transform: rotate3d(1, 0, 0, 0)
 
-@keyframes unfold1_3Back
+@keyframes rs-unfold1_3Back
   0%
     opacity: 1
     transform: rotate3d(1, 0, 0, -100deg)
@@ -1109,32 +1109,32 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     &.rs-show
       .rs-front
         &.rs-front1
-          -webkit-animation: unfold2_1Front 1s ease-in-out
-          animation: unfold2_1Front 1s ease-in-out
+          -webkit-animation: rs-unfold2_1Front 1s ease-in-out
+          animation: rs-unfold2_1Front 1s ease-in-out
         &.rs-front2
-          -webkit-animation: unfold2_2Front 1s ease-in-out
-          animation: unfold2_2Front 1s ease-in-out
+          -webkit-animation: rs-unfold2_2Front 1s ease-in-out
+          animation: rs-unfold2_2Front 1s ease-in-out
         &.rs-front3
-          -webkit-animation: unfold2_3Front 1s ease-in-out
-          animation: unfold2_3Front 1s ease-in-out
+          -webkit-animation: rs-unfold2_3Front 1s ease-in-out
+          animation: rs-unfold2_3Front 1s ease-in-out
       .rs-back
         &.rs-back1
-          -webkit-animation: unfold2_1Back 1s ease-in-out
+          -webkit-animation: rs-unfold2_1Back 1s ease-in-out
           -webkit-animation-delay: 0.9s
-          animation: unfold2_1Back 1s ease-in-out
+          animation: rs-unfold2_1Back 1s ease-in-out
           animation-delay: 0.9s
         &.rs-back2
-          -webkit-animation: unfold2_2Back 1s ease-in-out
+          -webkit-animation: rs-unfold2_2Back 1s ease-in-out
           -webkit-animation-delay: 0.9s
-          animation: unfold2_2Back 1s ease-in-out
+          animation: rs-unfold2_2Back 1s ease-in-out
           animation-delay: 0.9s
         &.rs-back3
-          -webkit-animation: unfold2_3Back 1s ease-in-out
+          -webkit-animation: rs-unfold2_3Back 1s ease-in-out
           -webkit-animation-delay: 0.9s
-          animation: unfold2_3Back 1s ease-in-out
+          animation: rs-unfold2_3Back 1s ease-in-out
           animation-delay: 0.9s
 
-@-webkit-keyframes unfold2_1Front
+@-webkit-keyframes rs-unfold2_1Front
   0%
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, 0)
@@ -1144,7 +1144,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, -100deg)
 
-@-webkit-keyframes unfold2_2Front
+@-webkit-keyframes rs-unfold2_2Front
   0%
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, 0)
@@ -1156,7 +1156,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, -100deg)
 
-@-webkit-keyframes unfold2_3Front
+@-webkit-keyframes rs-unfold2_3Front
   0%
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, 0)
@@ -1168,7 +1168,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, -100deg)
 
-@-webkit-keyframes unfold2_1Back
+@-webkit-keyframes rs-unfold2_1Back
   0%
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, 100deg)
@@ -1179,7 +1179,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, 0)
 
-@-webkit-keyframes unfold2_2Back
+@-webkit-keyframes rs-unfold2_2Back
   0%
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, 100deg)
@@ -1191,7 +1191,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, 0)
 
-@-webkit-keyframes unfold2_3Back
+@-webkit-keyframes rs-unfold2_3Back
   0%
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, 100deg)
@@ -1209,7 +1209,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     -webkit-transform: rotate3d(0, 1, 0, 0)
 
-@keyframes unfold2_1Front
+@keyframes rs-unfold2_1Front
   0%
     opacity: 1
     transform: rotate3d(0, 1, 0, 0)
@@ -1219,7 +1219,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     transform: rotate3d(0, 1, 0, -100deg)
 
-@keyframes unfold2_2Front
+@keyframes rs-unfold2_2Front
   0%
     opacity: 1
     transform: rotate3d(0, 1, 0, 0)
@@ -1231,7 +1231,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     transform: rotate3d(0, 1, 0, -100deg)
 
-@keyframes unfold2_3Front
+@keyframes rs-unfold2_3Front
   0%
     opacity: 1
     transform: rotate3d(0, 1, 0, 0)
@@ -1243,7 +1243,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     transform: rotate3d(0, 1, 0, -100deg)
 
-@keyframes unfold2_1Back
+@keyframes rs-unfold2_1Back
   0%
     opacity: 1
     transform: rotate3d(0, 1, 0, 100deg)
@@ -1254,7 +1254,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     transform: rotate3d(0, 1, 0, 0)
 
-@keyframes unfold2_2Back
+@keyframes rs-unfold2_2Back
   0%
     opacity: 1
     transform: rotate3d(0, 1, 0, 100deg)
@@ -1266,7 +1266,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     opacity: 1
     transform: rotate3d(0, 1, 0, 0)
 
-@keyframes unfold2_3Back
+@keyframes rs-unfold2_3Back
   0%
     opacity: 1
     transform: rotate3d(0, 1, 0, 100deg)
@@ -1299,16 +1299,16 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 
 .<%= get_class_name %>
   .rs-other01.rs-show .rs-front
-    -webkit-animation: example1Front 0.6s linear forwards
-    animation: example1Front 0.6s linear forwards
+    -webkit-animation: rs-other1Front 0.6s linear forwards
+    animation: rs-other1Front 0.6s linear forwards
 
-@-webkit-keyframes example1Front
+@-webkit-keyframes rs-other1Front
   0%
     opacity: 1
   100%
     opacity: 0
 
-@keyframes example1Front
+@keyframes rs-other1Front
   0%
     opacity: 1
   100%
@@ -1329,31 +1329,31 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
       animation-timing-function: ease-out
       animation-fill-mode: forwards
     .rs-front
-      -webkit-animation-name: example2Front
-      animation-name: example2Front
+      -webkit-animation-name: rs-other2Front
+      animation-name: rs-other2Front
     .rs-back
-      -webkit-animation-name: example2Back
-      animation-name: example2Back
+      -webkit-animation-name: rs-other2Back
+      animation-name: rs-other2Back
 
-@-webkit-keyframes example2Front
+@-webkit-keyframes rs-other2Front
   0%
     -webkit-transform: translateX(0)
   100%
     -webkit-transform: translateX(-#{$image_width}px)
 
-@-webkit-keyframes example2Back
+@-webkit-keyframes rs-other2Back
   0%
     -webkit-transform: translateX(#{$image_width}px)
   100%
     -webkit-transform: translateX(0px)
 
-@keyframes example2Front
+@keyframes rs-other2Front
   0%
     transform: translateX(0)
   100%
     transform: translateX(-#{$image_width}px)
 
-@keyframes example2Back
+@keyframes rs-other2Back
   0%
     transform: translateX(#{$image_width}px)
   100%
@@ -1368,10 +1368,10 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     .rs-back
       z-index: 2
     &.rs-show .rs-back
-      -webkit-animation: example3Back 0.4s ease-out forwards
-      animation: example3Back 0.4s ease-out forwards
+      -webkit-animation: rs-other3Back 0.4s ease-out forwards
+      animation: rs-other3Back 0.4s ease-out forwards
 
-@-webkit-keyframes example3Back
+@-webkit-keyframes rs-other3Back
   0%
     -webkit-transform: rotate(40deg) scale(1.5) translate(200px, 10px)
     opacity: 0
@@ -1379,7 +1379,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     -webkit-transform: rotate(0deg) scale(1) translate(0, 0)
     opacity: 1
 
-@keyframes example3Back
+@keyframes rs-other3Back
   0%
     transform: rotate(40deg) scale(1.5) translate(200px, 10px)
     opacity: 0
@@ -1391,10 +1391,10 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 
 .<%= get_class_name %>
   .rs-other04.rs-show .rs-front
-    -webkit-animation: example4Front 0.8s ease-in-out forwards
-    animation: example4Front 0.8s ease-in-out forwards
+    -webkit-animation: rs-other4Front 0.8s ease-in-out forwards
+    animation: rs-other4Front 0.8s ease-in-out forwards
 
-@-webkit-keyframes example4Front
+@-webkit-keyframes rs-other4Front
   0%
     -webkit-transform: translateX(0)
     z-index: 3
@@ -1407,7 +1407,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     -webkit-transform: rotateZ(0deg) translateX(0px)
     z-index: 1
 
-@keyframes example4Front
+@keyframes rs-other4Front
   0%
     transform: translateX(0)
     z-index: 3
@@ -1434,13 +1434,13 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
       animation-fill-mode: forwards
       transform-origin: 0% 100%
     .rs-front
-      -webkit-animation-name: example5Front
-      animation-name: example5Front
+      -webkit-animation-name: rs-other5Front
+      animation-name: rs-other5Front
     .rs-back
-      -webkit-animation-name: example5Back
-      animation-name: example5Back
+      -webkit-animation-name: rs-other5Back
+      animation-name: rs-other5Back
 
-@-webkit-keyframes example5Front
+@-webkit-keyframes rs-other5Front
   0%
     z-index: 3
   50%
@@ -1452,7 +1452,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     -webkit-transform: rotateZ(0deg)
     z-index: 1
 
-@-webkit-keyframes example5Back
+@-webkit-keyframes rs-other5Back
   0%
     z-index: 1
   50%
@@ -1464,7 +1464,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     -webkit-transform: rotateZ(0deg)
     z-index: 3
 
-@keyframes example5Front
+@keyframes rs-other5Front
   0%
     z-index: 3
   50%
@@ -1476,7 +1476,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     transform: rotateZ(0deg)
     z-index: 1
 
-@keyframes example5Back
+@keyframes rs-other5Back
   0%
     z-index: 1
   50%
@@ -1492,17 +1492,17 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 
 .<%= get_class_name %>
   .rs-other06.rs-show .rs-front
-    -webkit-animation: example6Front 0.4s ease-in-out forwards
-    animation: example6Front 0.4s ease-in-out forwards
+    -webkit-animation: rs-other6Front 0.4s ease-in-out forwards
+    animation: rs-other6Front 0.4s ease-in-out forwards
 
-@-webkit-keyframes example6Front
+@-webkit-keyframes rs-other6Front
   0%
     opacity: 1
   100%
     -webkit-transform: rotateZ(3deg) scale(1.5)
     opacity: 0
 
-@keyframes example6Front
+@keyframes rs-other6Front
   0%
     opacity: 1
   100%
@@ -1514,11 +1514,11 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
 .<%= get_class_name %>
   .rs-other07.rs-show .rs-front
     -webkit-transform-origin: 0% 100%
-    -webkit-animation: example7Front 1s ease-in-out forwards
+    -webkit-animation: rs-other7Front 1s ease-in-out forwards
     transform-origin: 0% 100%
-    animation: example7Front 1s ease-in-out forwards
+    animation: rs-other7Front 1s ease-in-out forwards
 
-@-webkit-keyframes example7Front
+@-webkit-keyframes rs-other7Front
   0%
     z-index: 3
     -webkit-animation-timing-function: ease-in
@@ -1544,7 +1544,7 @@ $slices_animation_step_value: $slices_animation_first_step / $slices_count
     -webkit-transform: rotateZ(360deg)
     z-index: 1
 
-@keyframes example7Front
+@keyframes rs-other7Front
   0%
     z-index: 3
     animation-timing-function: ease-in

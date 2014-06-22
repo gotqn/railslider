@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Railslider::VERSION
   spec.authors       = ['gotqn']
   spec.email         = ['george_27@abv.bg']
-  spec.description   = 'Do not download it - just reserving the name'
-  spec.summary       = 'The first version will be released soon'
-  spec.homepage      = ''
+  spec.description   = 'Introduces simple image slider for rails applications using CSS3 animations for image transitions.'
+  spec.summary       = 'The idea is inspired by [this great codedrops article] (http://tympanus.net/codrops/2011/12/19/experimental-css3-animations-for-image-transitions/).'
+  spec.homepage      = 'https://github.com/gotqn/railslider'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

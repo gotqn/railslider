@@ -10,12 +10,12 @@ Tested on:
 1. Google Chrome (Version 35.0.1916.153)
 2. Chromium (Version 34.0.1847.116)
 3. Safari (Version 5.1.7)
+4. Opera (22.0.1471.70)
 
 Coming soon:
 
-1. Internet Explorer 10
-2. Internet Explorer 11
-3. Mozzila Firefox 30
+1. Internet Explorer 11 (only animations from "unfolds" and "other" groups work for now)
+2. Mozzila Firefox 30 (need to debug and remove some issues)
 
 ## Installation
 
