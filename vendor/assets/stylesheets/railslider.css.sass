@@ -16,24 +16,24 @@ div.rs-container
       color: #444
       background: white
       cursor: pointer
-      background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed))
-      background: asset-data-url('arrow.png') no-repeat 100% 50%, -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
-      background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
-      background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
-      background: linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      //background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed))
+      background: asset-data-url('arrow.png') no-repeat 100% 50%, linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      //background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      //background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      //background: linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
       border-radius: 5px
       font-family: Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif
     & select:hover, a:hover
       color: #000
     & select:active
       background: #e5e5e5
-      background: -moz-linear-gradient(top, #e5e5e5 0%, white 100%)
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, white))
-      background: asset-data-url('arrow.png') no-repeat 100% 50%, -webkit-linear-gradient(top, #e5e5e5 0%, white 100%)
-      background: -o-linear-gradient(top, #e5e5e5 0%, white 100%)
-      background: -ms-linear-gradient(top, #e5e5e5 0%, white 100%)
-      background: linear-gradient(top, #e5e5e5 0%, white 100%)
+      //background: -moz-linear-gradient(top, #e5e5e5 0%, white 100%)
+      //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, white))
+      background: asset-data-url('arrow.png') no-repeat 100% 50%, linear-gradient(top, #e5e5e5 0%, white 100%)
+      //background: -o-linear-gradient(top, #e5e5e5 0%, white 100%)
+      //background: -ms-linear-gradient(top, #e5e5e5 0%, white 100%)
+      //background: linear-gradient(top, #e5e5e5 0%, white 100%)
     & select:focus
       outline: none
     & a
@@ -42,19 +42,19 @@ div.rs-container
       font-weight: bold
       color: #333
       text-decoration: none
-      background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed))
-      background: -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
-      background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
-      background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      //background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed))
+      //background: -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      //background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
+      //background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
       background: linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%)
       &:active
         background: #e5e5e5
-        background: -moz-linear-gradient(top, #e5e5e5 0%, white 100%)
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, white))
-        background: -webkit-linear-gradient(top, #e5e5e5 0%, white 100%)
-        background: -o-linear-gradient(top, #e5e5e5 0%, white 100%)
-        background: -ms-linear-gradient(top, #e5e5e5 0%, white 100%)
+        //background: -moz-linear-gradient(top, #e5e5e5 0%, white 100%)
+        //background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(100%, white))
+        //background: -webkit-linear-gradient(top, #e5e5e5 0%, white 100%)
+        //background: -o-linear-gradient(top, #e5e5e5 0%, white 100%)
+        //background: -ms-linear-gradient(top, #e5e5e5 0%, white 100%)
         background: linear-gradient(top, #e5e5e5 0%, white 100%)
       &.rs-prev
         margin-right: 10px
@@ -64,7 +64,6 @@ div.rs-container
     height: 425px
     -webkit-perspective: 1000px
     perspective: 1000px
-    -moz-perspective: 1000px
     .rs-shadow
       background: transparent asset-data-url('shadow.png') no-repeat center bottom
       position: absolute
@@ -89,11 +88,7 @@ div.rs-container
       width: 12px
       text-indent: -9999px
       background: #fff
-      -webkit-border-radius: 50%
-      -moz-border-radius: 50%
       border-radius: 50%
-      -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.55) inset
-      -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.55) inset
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.55) inset
       z-index: 25
       &.shown
@@ -115,7 +110,7 @@ div.rs-container
       text-decoration: none
       background: none
       -webkit-animation: pause-button-in 1s linear
-      -moz-animation: pause-button-in 1s linear
+      //-moz-animation: pause-button-in 1s linear
       -animation: pause-button-in 1s linear
     .rs-pause
       &:after, &:before
@@ -140,7 +135,7 @@ div.rs-container
       text-decoration: none
       background: none
       -webkit-animation: play-button-in 0.5s linear
-      -moz-animation: play-button-in 0.5s linear
+      //-moz-animation: play-button-in 0.5s linear
       animation: play-button-in 0.5s linear
       &:hover, &:focus
         border-bottom: 10px solid transparent
@@ -157,13 +152,13 @@ div.rs-container
   100%
     opacity: 1
 
-@-moz-keyframes play-button-in
+//@-moz-keyframes play-button-in
   0%
     opacity: 0
   100%
     opacity: 1
 
-@-moz-keyframes pause-button-in
+//@-moz-keyframes pause-button-in
   0%
     opacity: 0
   100%
