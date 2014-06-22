@@ -97,7 +97,7 @@
                                         return false;
                                     }else{
 
-                                        if((this.type === 'rs-unfold01' && event.originalEvent.animationName !== 'unfold1_3Back')||(this.type === 'rs-unfold02' && event.originalEvent.animationName !== 'unfold2_3Back')){
+                                        if((this.type === 'rs-unfold01' && event.originalEvent.animationName !== 'rs-unfold1_3Back')||(this.type === 'rs-unfold02' && event.originalEvent.animationName !== 'rs-unfold2_3Back')){
                                             return false;
                                         }
 
