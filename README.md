@@ -1,6 +1,6 @@
 # Railslider
 
-Introduces simple image slider for rails applications using CSS3 animations for image transitions.
+Introduces simple images slider for rails applications using CSS3 animations for image transitions.
 The idea is inspired by [this great codedrops article] (http://tympanus.net/codrops/2011/12/19/experimental-css3-animations-for-image-transitions/).
 
 ## Support
@@ -73,16 +73,13 @@ Add the following lines in the corresponding *model.js*:
                 //Creating new instance of "RailSlider"
                 demo = new RailSlider({'containerID':'demo'});
                 demo.init();
+                demo.controls.show()
             });
         }else{
             setTimeout(IsjQueryLoaded(),1000);
         }
     })();
-    
-Execute the following line In your browser console:
 
-    demo.controls.show()
-    
 __Result__
 
 You should end up with a demo rails slider image gallery rendered and controls for changing the animations visible.
