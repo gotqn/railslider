@@ -45,6 +45,8 @@ is generating the files below:
     
    * app/railslider/demo.rb
    * vendor/assets/stylesheets/railslider/demo.rb/transitions.css.sass
+
+Note: Restart the rails server.
    
 __Loading demo slider css and javascript files__
 
@@ -61,7 +63,7 @@ __Rendering demo slider using default images__
 
 Add the following line in some *model/show.html.erb*:
 
-    Demo.new({id:demo}).render
+    <%= Demo.new({id:'demo'}).render %>
     
 Add the following lines in the corresponding *model.js*: 
 
