@@ -24,8 +24,6 @@ $slices_middle: ($slices_count+1) / 2
     position: absolute
   .rs-card, .rs-cover, .rs-transition
     -webkit-transform-style: preserve-3d
-    -moz-transform-style: preserve-3d
-    -o-transform-style: preserve-3d
     transform-style: preserve-3d
 
 /* ********************** ********************** ************ ********************** ********************** */
@@ -43,15 +41,12 @@ $slices_middle: ($slices_count+1) / 2
   .rs-flip01
     .rs-front, .rs-back
       -webkit-backface-visibility: hidden
-      -moz-backface-visibility: hidden
       backface-visibility: hidden
     .rs-back
       -webkit-transform: rotate3d(1, 0, 0, -180deg)
-      -moz-transition: rotate3d(1, 0, 0, -180deg)
       transition: rotate3d(1, 0, 0, -180deg)
     &.rs-show .rs-card
       -webkit-animation: rs-flip01 1s ease-in-out forwards
-      -moz-animation: rs-flip01 1s ease-in-out forwards
       animation: rs-flip01 1s ease-in-out forwards
 
 @-webkit-keyframes rs-flip01
@@ -60,17 +55,11 @@ $slices_middle: ($slices_count+1) / 2
   100%
     -webkit-transform: rotate3d(1, 0, 0, -180deg)
 
-@-moz-keyframes rs-flip01
-  0%
-    -moz-transition: rotate3d(1, 0, 0, 0deg)
-  100%
-    -moz-transition: rotate3d(1, 0, 0, -180deg)
-
 @keyframes rs-flip01
   0%
-    transition: rotate3d(1, 0, 0, 0deg)
+    transform: rotate3d(1, 0, 0, 0deg)
   100%
-    transition: rotate3d(1, 0, 0, -180deg)
+    transform: rotate3d(1, 0, 0, -180deg)
 
 /* ********************** Flip 02 ********************** */
 
@@ -78,11 +67,15 @@ $slices_middle: ($slices_count+1) / 2
   .rs-flip02
     .rs-front, .rs-back
       -webkit-backface-visibility: hidden
+      backface-visibility: hidden
     .rs-back
       -webkit-transform: rotate3d(1, 0, 0, -180deg)
+      transform: rotate3d(1, 0, 0, -180deg)
     &.rs-show .rs-card
       -webkit-animation: flip02 1s ease-in-out forwards
       -webkit-transform-origin: 50% 0%
+      animation: flip02 1s ease-in-out forwards
+      transform-origin: 50% 0%
 
 @-webkit-keyframes flip02
   0%
